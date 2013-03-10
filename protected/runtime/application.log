@@ -1,0 +1,523 @@
+2013/03/09 17:16:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/index.php?r=gii
+---
+2013/03/09 17:19:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:21:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:21:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:21:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:21:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] timeout expired' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:27:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:27:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:27:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 17:28:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii
+---
+2013/03/09 17:29:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii
+---
+2013/03/09 17:29:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii
+---
+2013/03/09 17:29:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+---
+2013/03/09 17:29:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+---
+2013/03/09 18:58:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Network is unreachable
+	Is the server running on host "192.168.1.43" and accepting
+	TCP/IP connections on port 5432?' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 18:59:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 18:59:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  no hay una línea en pg_hba.conf para «192.168.1.20», usuario «simoni», base de datos «simoni», SSL inactivo' in /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii-1.1.13.e9e4a0/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/simoni/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/simoni/index.php?r=gii/model
+HTTP_REFERER=http://127.0.0.1/simoni/index.php?r=gii/default/index
+---
+2013/03/09 19:20:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gi".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gi')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/?r=gi
+---
+2013/03/09 19:20:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/yii-1.1.13.e9e4a0/framework/gii/GiiModule.php:168
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/simoni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/simoni/?r=gii
+---
+2013/03/09 19:21:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/yii-1.1.13.e9e4a0/framework/gii/GiiModule.php:168
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/simoni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/simoni/?r=gii
+---
+2013/03/09 19:22:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/yii-1.1.13.e9e4a0/framework/gii/GiiModule.php:168
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/simoni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/simoni/?r=gii
+---
+2013/03/09 19:22:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/yii-1.1.13.e9e4a0/framework/gii/GiiModule.php:168
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/simoni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/simoni/?r=gii
+---
+2013/03/09 19:22:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/yii-1.1.13.e9e4a0/framework/gii/GiiModule.php:168
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/simoni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/simoni/?r=gii
+---
+2013/03/09 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/install".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 19:58:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/install".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 19:59:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/install".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 19:59:17 [error] [exception.CException] exception 'CException' with message 'Alias "users.UsersModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php:316
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php(196): YiiBase::import('users.UsersModu...', true)
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(282): YiiBase::createComponent('users.UsersModu...', 'users', NULL, Array)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(337): CModule->getModule('users')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(276): CWebApplication->createController('users/install')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /var/www/simoni/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 20:02:20 [error] [exception.CException] exception 'CException' with message 'Alias "users.UsersModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php:316
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php(196): YiiBase::import('users.UsersModu...', true)
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(282): YiiBase::createComponent('users.UsersModu...', 'users', NULL, Array)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(337): CModule->getModule('users')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(276): CWebApplication->createController('users/install')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /var/www/simoni/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 20:03:53 [error] [exception.CException] exception 'CException' with message 'Alias "users.UsersModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php:316
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php(196): YiiBase::import('users.UsersModu...', true)
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(282): YiiBase::createComponent('users.UsersModu...', 'users', NULL, Array)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(337): CModule->getModule('users')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(276): CWebApplication->createController('users/install')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /var/www/simoni/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 20:03:54 [error] [exception.CException] exception 'CException' with message 'Alias "users.UsersModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php:316
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/YiiBase.php(196): YiiBase::import('users.UsersModu...', true)
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CModule.php(282): YiiBase::createComponent('users.UsersModu...', 'users', NULL, Array)
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(337): CModule->getModule('users')
+#3 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(276): CWebApplication->createController('users/install')
+#4 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#5 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /var/www/simoni/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 20:04:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/install".' in /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('users/install')
+#1 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/simoni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/simoni/index.php?r=users/install
+---
+2013/03/09 20:04:39 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Please enable a caching component for yii-user-management to work.' in /var/www/simoni/protected/modules/user/controllers/YumController.php:28
+Stack trace:
+#0 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(306): YumController->beforeAction(Object(CInlineAction))
+#1 /var/www/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#9 /var/www/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('user/install')
+#10 /var/www/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /var/www/simoni/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/simoni/index.php?r=user/install
+---
