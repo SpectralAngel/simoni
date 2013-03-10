@@ -32,6 +32,10 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Dimensiones', 'url'=>array('dimension/index')),
+				array('label'=>'Beneficiarios', 'url'=>array('beneficiario/index')),
+				array('label'=>'Objetos Conservación', 'url'=>array('objetoConservacion/index')),
+				array('label'=>'Atributos', 'url'=>array('atributo/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
