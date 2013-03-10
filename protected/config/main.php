@@ -5,12 +5,13 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array('log', 'bootstrap'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -25,6 +26,9 @@ return array(
 			'password'=>'hola',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.43', '192.168.1.35'),
+			'generatorPaths'=>array(
+			    'bootstrap.gii',
+			),
 		),
 		'auth',
 	),
@@ -33,8 +37,10 @@ return array(
 	'components'=>array(
 	    'authManager'=>array(
 	        'behaviors' => array(
+	            array(
 	            'class' => 'auth.components.AuthBehavior',
 	            'admins' => array('admin', 'foo',),
+	            ),
 	         ),
 	    ),
 		'user'=>array(
@@ -44,6 +50,9 @@ return array(
 		),
 		'cache'=>array(
 		    'class'=>'system.caching.CDummyCache'
+		),
+		'bootstrap'=>array(
+		    'class'=>'ext.bootstrap.components.Bootstrap',
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
