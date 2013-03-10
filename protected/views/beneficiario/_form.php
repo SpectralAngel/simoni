@@ -23,7 +23,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'dimension_id'); ?>
-		<?php echo $form->textField($model,'dimension_id'); ?>
+		<?php echo $form->dropDownList($model,'dimension_id', CHtml::listData(
+		    Dimension::model()->findAll(), 'id', 'nombre'), 
+		    array('prompt'=>'Seleccionar una Dimension')) ?>
 		<?php echo $form->error($model,'dimension_id'); ?>
 	</div>
 

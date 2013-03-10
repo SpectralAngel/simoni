@@ -16,12 +16,20 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Dimension #<?php echo $model->id; ?></h1>
+<h1>Detalles de la Dimensi&oacute;n <?php echo $model->nombre; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'nombre',
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'dataProvider'=>new CArrayDataProvider('Beneficiario', array('data'=>$model->beneficiarios)),
+	'columns' => array(
+	    array(
+	        'class'=>'CLinkColumn',
+	        'labelExpression'=>'$data->nombre',
+	        'header'=>'Beneficiario',
+    	    'urlExpression'=>'Yii::app()->createUrl("beneficiario/view", array("id"=>$data["id"]))',
+        ),
 	),
 )); ?>
+
+<a>
+    <?php echo CHtml::link('Agregar Beneficiario', array("beneficiario/create")); ?>
+</a>

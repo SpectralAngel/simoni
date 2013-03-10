@@ -6,6 +6,9 @@
  * The followings are the available columns in table 'dimension':
  * @property integer $id
  * @property string $nombre
+ *
+ * The followings are the available model relations:
+ * @property Beneficiario[] $beneficiarios
  */
 class Dimension extends CActiveRecord
 {
@@ -50,6 +53,7 @@ class Dimension extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'beneficiarios' => array(self::HAS_MANY, 'Beneficiario', 'dimension_id'),
 		);
 	}
 
