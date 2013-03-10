@@ -1,0 +1,3 @@
+[submodule "protected/modules/auth"]
+	path = protected/modules/auth
+	url = git://github.com/Crisu83/yii-auth.git

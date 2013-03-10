@@ -26,16 +26,24 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.43', '192.168.1.35'),
 		),
-		'user'=>array(
-		    'debug'=>true,
-		),
+		'auth',
 	),
 
 	// application components
 	'components'=>array(
+	    'authManager'=>array(
+	        'behaviors' => array(
+	            'class' => 'auth.components.AuthBehavior',
+	            'admins' => array('admin', 'foo',),
+	         ),
+	    ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'class'=>'auth.components.AuthWebUser',
+		),
+		'cache'=>array(
+		    'class'=>'system.caching.CDummyCache'
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -77,7 +85,6 @@ return array(
 				),
 				*/
 			),
-			array()
 		),
 	),
 
