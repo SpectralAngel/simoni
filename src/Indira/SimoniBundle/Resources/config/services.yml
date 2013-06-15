@@ -1,0 +1,7 @@
+parameters:
+#    indira_simoni.example.class: Indira\SimoniBundle\Example
+
+services:
+#    indira_simoni.example:
+#        class: %indira_simoni.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

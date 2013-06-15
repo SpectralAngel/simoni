@@ -1,0 +1,7 @@
+indira_simoni_homepage:
+    pattern:  /
+    defaults: { _controller: IndiraSimoniBundle:Default:index }
+
+IndiraSimoniBundle_document:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
+    prefix:   /document

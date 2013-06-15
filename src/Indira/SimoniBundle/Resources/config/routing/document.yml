@@ -1,0 +1,30 @@
+document:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Document:index" }
+
+document_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Document:show" }
+
+document_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Document:new" }
+
+document_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Document:create" }
+    requirements: { _method: post }
+
+document_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Document:edit" }
+
+document_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Document:update" }
+    requirements: { _method: post|put }
+
+document_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Document:delete" }
+    requirements: { _method: post|delete }
