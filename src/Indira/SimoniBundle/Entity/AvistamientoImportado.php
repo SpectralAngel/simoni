@@ -121,14 +121,14 @@ class AvistamientoImportado
     /**
      * @var float
      *
-     * @ORM\Column(name="latitud", type="decimal", nullable=true, precision=12, scale=9)
+     * @ORM\Column(name="latitud", type="decimal", nullable=true, precision=18, scale=9)
      */
     private $latitud;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="longitud", type="decimal", nullable=true, precision=12, scale=9)
+     * @ORM\Column(name="longitud", type="decimal", nullable=true, precision=18, scale=9)
      */
     private $longitud;
     
