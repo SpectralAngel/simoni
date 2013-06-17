@@ -59,25 +59,28 @@ class DocumentController extends Controller
                 $avistamiento->setZona($zona);
                 $avistamiento->setMunicipio($municipio);
                 
-                $avistamiento->setGenero($row[0]);
-                $avistamiento->setEspecie($row[1]);
+                $avistamiento->setNombreComun($row[1]);
                 
-                $fecha = \DateTime::createFromFormat('m-d-y H:i', $row[2].' '.$row[3]);
+                $avistamiento->setGenero($row[2]);
+                $avistamiento->setEspecie($row[3]);
+                $avistamiento->setLocalidad($row[4]);
+                
+                $fecha = \DateTime::createFromFormat('m-d-y H:i', $row[5].' '.$row[6]);
                 $avistamiento->setFecha($fecha);
+                $avistamiento->setLatitud($row[7]);
+                $avistamiento->setLongitud($row[8]);
                 
-                $tipo = $em->getRepository('IndiraSimoniBundle:TipoAvistamiento')->find($row[4]);
+                $tipo = $em->getRepository('IndiraSimoniBundle:TipoAvistamiento')->find($row[9]);
                 $avistamiento->setTipo($tipo);
                 
-                $sexo = $em->getRepository('IndiraSimoniBundle:Sexo')->find($row[5]);
+                $sexo = $em->getRepository('IndiraSimoniBundle:Sexo')->find($row[10]);
                 $avistamiento->setSexo($sexo);
                 
-                $edad = $em->getRepository('IndiraSimoniBundle:Edad')->find($row[6]);
+                $edad = $em->getRepository('IndiraSimoniBundle:Edad')->find($row[11]);
                 $avistamiento->setEdad($edad);
                 
-                $avistamiento->setCantidad($row[7]);
-                $avistamiento->setComentario($row[8]);
-                $avistamiento->setLatitud($row[9]);
-                $avistamiento->setLongitud($row[10]);
+                $avistamiento->setCantidad($row[12]);
+                $avistamiento->setComentario($row[13]);
                 $avistamiento->setUsuario($this->getUser());
                 
                 $em->persist($avistamiento);
