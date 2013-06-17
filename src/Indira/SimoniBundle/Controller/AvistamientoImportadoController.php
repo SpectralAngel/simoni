@@ -4,6 +4,7 @@ namespace Indira\SimoniBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 use Indira\SimoniBundle\Entity\AvistamientoImportado;
 use Indira\SimoniBundle\Form\AvistamientoImportadoType;
@@ -11,13 +12,12 @@ use Indira\SimoniBundle\Form\AvistamientoImportadoReinoType;
 
 /**
  * AvistamientoImportado controller.
- *
+ * @Secure(roles="ROLE_USER")
  */
 class AvistamientoImportadoController extends Controller
 {
     /**
      * Lists all AvistamientoImportado entities.
-     *
      */
     public function indexAction()
     {

@@ -4,6 +4,7 @@ namespace Indira\SimoniBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 use Indira\SimoniBundle\Entity\Document;
 use Indira\SimoniBundle\Entity\AvistamientoImportado;
@@ -11,7 +12,7 @@ use Indira\SimoniBundle\Form\DocumentType;
 
 /**
  * Document controller.
- *
+ * @Secure(roles="ROLE_USER")
  */
 class DocumentController extends Controller
 {
