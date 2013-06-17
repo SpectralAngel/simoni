@@ -12,12 +12,12 @@ use Indira\SimoniBundle\Form\AvistamientoImportadoReinoType;
 
 /**
  * AvistamientoImportado controller.
- * @Secure(roles="ROLE_USER")
  */
 class AvistamientoImportadoController extends Controller
 {
     /**
      * Lists all AvistamientoImportado entities.
+     * @Secure(roles="ROLE_USER")
      */
     public function indexAction()
     {
@@ -33,6 +33,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Creates a new AvistamientoImportado entity.
+     * @Secure(roles="ROLE_USER")
      *
      */
     public function createAction(Request $request)
@@ -58,6 +59,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Creates a new AvistamientoImportado entity.
+     * @Secure(roles="ROLE_USER")
      *
      */
     public function createReinoAction(Request $request, $reino)
@@ -83,7 +85,9 @@ class AvistamientoImportadoController extends Controller
             'reino' => $reino
         ));
     }
-    
+    /*
+     * @Secure(roles="ROLE_USER")
+     */
     public function newReinoAction($reino)
     {
         $em = $this->getDoctrine()->getManager();
@@ -101,7 +105,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Displays a form to create a new AvistamientoImportado entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function newAction()
     {
@@ -116,7 +120,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Finds and displays a AvistamientoImportado entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function showAction($id)
     {
@@ -138,7 +142,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Displays a form to edit an existing AvistamientoImportado entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function editAction($id)
     {
@@ -162,7 +166,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Edits an existing AvistamientoImportado entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function updateAction(Request $request, $id)
     {
@@ -194,7 +198,7 @@ class AvistamientoImportadoController extends Controller
 
     /**
      * Deletes a AvistamientoImportado entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function deleteAction(Request $request, $id)
     {

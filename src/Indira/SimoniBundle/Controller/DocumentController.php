@@ -12,13 +12,12 @@ use Indira\SimoniBundle\Form\DocumentType;
 
 /**
  * Document controller.
- * @Secure(roles="ROLE_USER")
  */
 class DocumentController extends Controller
 {
     /**
      * Lists all Document entities.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function indexAction()
     {
@@ -33,7 +32,7 @@ class DocumentController extends Controller
 
     /**
      * Creates a new Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function createAction(Request $request)
     {
@@ -101,7 +100,7 @@ class DocumentController extends Controller
 
     /**
      * Displays a form to create a new Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function newAction()
     {
@@ -116,7 +115,7 @@ class DocumentController extends Controller
 
     /**
      * Finds and displays a Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function showAction($id)
     {
@@ -140,7 +139,7 @@ class DocumentController extends Controller
     
     /**
      * Displays a form to edit an existing Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function editAction($id)
     {
@@ -164,7 +163,7 @@ class DocumentController extends Controller
 
     /**
      * Edits an existing Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function updateAction(Request $request, $id)
     {
@@ -199,7 +198,7 @@ class DocumentController extends Controller
 
     /**
      * Deletes a Document entity.
-     *
+     * @Secure(roles="ROLE_USER")
      */
     public function deleteAction(Request $request, $id)
     {
