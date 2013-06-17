@@ -16,7 +16,7 @@ class Document
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     public $id;
-
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -82,25 +82,19 @@ class Document
     /**
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
-     */
+     */ 
     public function upload()
     {
+        // the file property can be empty if the field is not required
         if (null === $this->file) {
             return;
         }
-
-        // you must throw an exception here if the file cannot be moved
-        // so that the entity is not persisted to the database
-        // which the UploadedFile move() method does
-        $this->file->move(
-            $this->getUploadRootDir(),
-            $this->file->getClientOriginalName()
-        );
-        $this->path = $this->file->getClientOriginalName();
-
+        $hashName = sha1($this->file->getClientOriginalName() . $this->getId() . mt_rand(0, 99999));
+        
+        $this->path = $hashName . '.xls';
+        $this->file->move($this->getUploadRootDir(), $this->getPath());
         unset($this->file);
     }
-    
     /**
      * @ORM\PreRemove()
      */
@@ -173,5 +167,28 @@ class Document
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Indira\SimoniBundle\Entity\User $user
+     * @return Document
+     */
+    public function setUser(\Indira\SimoniBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Indira\SimoniBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

@@ -56,39 +56,45 @@ class Avistamiento
      * @ORM\JoinColumn(name="edad_id", referencedColumnName="id")
      */
     protected $edad;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Sexo", inversedBy="avistamientos")
+     * @ORM\JoinColumn(name="sexo_id", referencedColumnName="id")
+     */
+    protected $sexo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha", type="datetime")
+     * @ORM\Column(name="fecha", type="datetime", nullable=true)
      */
     private $fecha;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="cantidad", type="integer")
+     * @ORM\Column(name="cantidad", type="integer", nullable=true)
      */
     private $cantidad;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="latitud", type="decimal")
+     * @ORM\Column(name="latitud", type="decimal", nullable=true, precision=12, scale=9)
      */
     private $latitud;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="longitud", type="decimal")
+     * @ORM\Column(name="longitud", type="decimal", nullable=true, precision=12, scale=9)
      */
     private $longitud;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="comentario", type="text")
+     * @ORM\Column(name="comentario", type="text", nullable=true)
      */
     private $comentario;
     
@@ -330,5 +336,51 @@ class Avistamiento
     public function getZona()
     {
         return $this->zona;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param \Indira\SimoniBundle\Entity\User $usuario
+     * @return Avistamiento
+     */
+    public function setUsuario(\Indira\SimoniBundle\Entity\User $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \Indira\SimoniBundle\Entity\User 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set sexo
+     *
+     * @param \Indira\SimoniBundle\Entity\Sexo $sexo
+     * @return Avistamiento
+     */
+    public function setSexo(\Indira\SimoniBundle\Entity\Sexo $sexo = null)
+    {
+        $this->sexo = $sexo;
+
+        return $this;
+    }
+
+    /**
+     * Get sexo
+     *
+     * @return \Indira\SimoniBundle\Entity\Sexo 
+     */
+    public function getSexo()
+    {
+        return $this->sexo;
     }
 }

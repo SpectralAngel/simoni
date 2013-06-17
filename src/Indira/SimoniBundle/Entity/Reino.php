@@ -38,6 +38,15 @@ class Reino
      * @ORM\OneToMany(targetEntity="Especie", mappedBy="reino")
      */
     protected $especies;
+    /**
+     * @ORM\OneToMany(targetEntity="TipoAvistamiento", mappedBy="reino")
+     */
+    protected $tiposAvistamiento;
+    /**
+     * @ORM\OneToMany(targetEntity="Clase", mappedBy="reino")
+     */
+    protected $clases;
+    
 
     /**
      * Get id
@@ -133,5 +142,71 @@ class Reino
     public function getColor()
     {
         return $this->color;
+    }
+
+    /**
+     * Add tiposAvistamiento
+     *
+     * @param \Indira\SimoniBundle\Entity\TipoAvistamiento $tiposAvistamiento
+     * @return Reino
+     */
+    public function addTiposAvistamiento(\Indira\SimoniBundle\Entity\TipoAvistamiento $tiposAvistamiento)
+    {
+        $this->tiposAvistamiento[] = $tiposAvistamiento;
+
+        return $this;
+    }
+
+    /**
+     * Remove tiposAvistamiento
+     *
+     * @param \Indira\SimoniBundle\Entity\TipoAvistamiento $tiposAvistamiento
+     */
+    public function removeTiposAvistamiento(\Indira\SimoniBundle\Entity\TipoAvistamiento $tiposAvistamiento)
+    {
+        $this->tiposAvistamiento->removeElement($tiposAvistamiento);
+    }
+
+    /**
+     * Get tiposAvistamiento
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTiposAvistamiento()
+    {
+        return $this->tiposAvistamiento;
+    }
+
+    /**
+     * Add clases
+     *
+     * @param \Indira\SimoniBundle\Entity\Clase $clases
+     * @return Reino
+     */
+    public function addClase(\Indira\SimoniBundle\Entity\Clase $clases)
+    {
+        $this->clases[] = $clases;
+
+        return $this;
+    }
+
+    /**
+     * Remove clases
+     *
+     * @param \Indira\SimoniBundle\Entity\Clase $clases
+     */
+    public function removeClase(\Indira\SimoniBundle\Entity\Clase $clases)
+    {
+        $this->clases->removeElement($clases);
+    }
+
+    /**
+     * Get clases
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClases()
+    {
+        return $this->clases;
     }
 }

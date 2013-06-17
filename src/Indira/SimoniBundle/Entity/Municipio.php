@@ -29,9 +29,26 @@ class Municipio
     private $nombre;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=255)
+     */
+    private $color;
+    
+    /**
      * @ORM\OneToMany(targetEntity="Avistamiento", mappedBy="municipio")
      */
     protected $avistamientos;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="edad")
+     */
+    protected $avistamientosImportados;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
     
     /**
      * Get id
@@ -71,6 +88,7 @@ class Municipio
     public function __construct()
     {
         $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -104,5 +122,61 @@ class Municipio
     public function getAvistamientos()
     {
         return $this->avistamientos;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     * @return Municipio
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string 
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Add avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     * @return Municipio
+     */
+    public function addAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados[] = $avistamientosImportados;
+
+        return $this;
+    }
+
+    /**
+     * Remove avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     */
+    public function removeAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados->removeElement($avistamientosImportados);
+    }
+
+    /**
+     * Get avistamientosImportados
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAvistamientosImportados()
+    {
+        return $this->avistamientosImportados;
     }
 }

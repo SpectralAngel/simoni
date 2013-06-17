@@ -41,6 +41,16 @@ class Edad
     protected $avistamientos;
     
     /**
+     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="zona")
+     */
+    protected $avistamientosImportados;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -55,6 +65,7 @@ class Edad
     public function __construct()
     {
         $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -147,5 +158,38 @@ class Edad
     public function getColor()
     {
         return $this->color;
+    }
+
+    /**
+     * Add avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     * @return Edad
+     */
+    public function addAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados[] = $avistamientosImportados;
+
+        return $this;
+    }
+
+    /**
+     * Remove avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     */
+    public function removeAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados->removeElement($avistamientosImportados);
+    }
+
+    /**
+     * Get avistamientosImportados
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAvistamientosImportados()
+    {
+        return $this->avistamientosImportados;
     }
 }

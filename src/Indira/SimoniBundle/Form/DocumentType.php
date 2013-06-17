@@ -12,7 +12,17 @@ class DocumentType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('path')
+            ->add('file')
+            ->add('municipio', 'entity', array(
+                'mapped'   => false,
+                'class' => 'Indira\SimoniBundle\Entity\Municipio',
+                )
+            )
+            ->add('zona', 'entity', array(
+                'mapped'   => false,
+                'class' => 'Indira\SimoniBundle\Entity\Zona',
+                )
+            )
         ;
     }
 

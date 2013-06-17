@@ -1,0 +1,82 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Avistamiento</h1>
+    </section>
+  </div>
+</div>
+<div class="row-fluid">
+  <section class="span9">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+          <th>Municipio</th>
+          <td>{{ entity.municipio }}</td>
+        </tr>
+        <tr>
+          <th>Zona</th>
+          <td>{{ entity.zona }}</td>
+        </tr>
+        <tr>
+          <th>Nombre Com&uacute;n</th>
+          <td>{{ entity.nombreComun }}</td>
+        </tr>
+        <tr>
+          <th>Nombre Cient&iacute;fico</th>
+          <td>{{ entity.nombreCientifico }}</td>
+        </tr>
+        {% if entity.genero %}
+        <tr>
+          <th>G&eacute;nero</th>
+          <td>{{ entity.genero }}</td>
+        </tr>
+        {% endif %}
+        {% if entity.especie %}
+        <tr>
+          <th>Especie</th>
+          <td>{{ entity.especie }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <th>Fecha</th>
+          <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+          <th>Cantidad</th>
+          <td>{{ entity.cantidad }}</td>
+        </tr>
+        <tr>
+          <th>Latitud</th>
+          <td>{{ entity.latitud }}</td>
+        </tr>
+        <tr>
+          <th>Longitud</th>
+          <td>{{ entity.longitud }}</td>
+        </tr>
+        <tr>
+          <th>Comentario</th>
+          <td>{{ entity.comentario }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('avistamiento_importado') }}"> Regresar a Avistamientos </a>
+        </li>
+        <li>
+          <a href="{{ path('avistamiento_importado_edit', { 'id': entity.id }) }}"> Editar </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}

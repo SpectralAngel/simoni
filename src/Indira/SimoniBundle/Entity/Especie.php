@@ -24,35 +24,35 @@ class Especie
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_comun", type="string", length=255)
+     * @ORM\Column(name="nombre_comun", type="string", length=255, nullable=true)
      */
     private $nombreComun;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="genero", type="string", length=255)
+     * @ORM\Column(name="genero", type="string", length=255, nullable=true)
      */
     protected $genero;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="especie", type="string", length=255)
+     * @ORM\Column(name="especie", type="string", length=255, nullable=true)
      */
     protected $especie;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_cientifico", type="string", length=255)
+     * @ORM\Column(name="nombre_cientifico", type="string", length=255, nullable=true)
      */
     private $nombreCientifico;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="text")
+     * @ORM\Column(name="descripcion", type="text", nullable=true)
      */
     private $descripcion;
     
@@ -65,42 +65,42 @@ class Especie
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_pech", type="string", length=255)
+     * @ORM\Column(name="nombre_pech", type="string", length=255, nullable=true)
      */
     private $nombrePech;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_tawaka", type="string", length=255)
+     * @ORM\Column(name="nombre_tawaka", type="string", length=255, nullable=true)
      */
     private $nombreTawaka;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_garifuna", type="string", length=255)
+     * @ORM\Column(name="nombre_garifuna", type="string", length=255, nullable=true)
      */
     private $nombreGarifuna;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_misquito", type="string", length=255)
+     * @ORM\Column(name="nombre_misquito", type="string", length=255, nullable=true)
      */
     private $nombreMisquito;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="UICN", type="string", length=255)
+     * @ORM\Column(name="UICN", type="string", length=255, nullable=true)
      */
     private $uICN;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="CITES", type="string", length=255)
+     * @ORM\Column(name="CITES", type="string", length=255, nullable=true)
      */
     private $cITES;
     

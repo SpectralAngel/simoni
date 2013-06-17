@@ -5,3 +5,7 @@ indira_simoni_homepage:
 IndiraSimoniBundle_document:
     resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
     prefix:   /document
+
+IndiraSimoniBundle_avistamientoimportado:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/avistamientoimportado.yml"
+    prefix:   /avistamientoimportado

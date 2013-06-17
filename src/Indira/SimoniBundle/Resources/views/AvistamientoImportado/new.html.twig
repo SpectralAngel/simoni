@@ -1,0 +1,31 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Ingresar un Avistamiento {% if reino is defined %} de {{ reino.nombre }} {% endif%}</h1>
+    </section>
+  </div>
+</div>
+<div class="row-fluid">
+  <section class="span9">
+    <form action="{{ path('avistamiento_importado_create') }}" method="post" {{ form_enctype(form) }}>
+      {{ form_widget(form) }}
+      <p class="form-actions">
+        <button class="btn btn-primary" type="submit">
+          <i class="icon-save"></i> Guardar
+        </button>
+      </p>
+    </form>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('avistamiento_importado') }}"> Regresar a Avistamientos </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}

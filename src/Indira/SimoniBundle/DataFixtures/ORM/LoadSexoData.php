@@ -16,10 +16,9 @@ class LoadSexoData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $tipos = array(
-            'Cría',
-            'Juvenil',
-            'Adulto',
             'Indeterminado',
+            'Masculino',
+            'Femenino',
         );
         $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
         
@@ -38,6 +37,6 @@ class LoadSexoData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 3; // the order in which fixtures will be loaded
+        return 5; // the order in which fixtures will be loaded
     }
 }

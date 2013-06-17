@@ -13,34 +13,47 @@ class LoadTipoAvistamientoData extends AbstractFixture implements OrderedFixture
      * {@inheritDoc}
      */
     public function load(ObjectManager $manager) {
+        
+        $flora = $this->getReference('Flora');
+        $fauna = $this->getReference('Fauna');
+        
         $tipos = array(
-            'Detección',
-            'Animal atropellado',
-            'Animal capturado',
-            'Animal cazado',
-            'Avistamiento',
-            'Feca',
             'Huella',
             'Marca',
-            'Registro auditivo',
-            'Registro por cámara - trampa',
+            'Heces',
+            'Foto Captura',
             'Reporte de tercero',
             'Restos de animal',
-            'Foto Captura',
-            'Detección'
+            'Otros',
         );
         $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
 
         foreach ($tipos as $i => $nombre) {
             $entity = new TipoAvistamiento();
+            $entity->setReino($fauna);
             $entity->setNombre($nombre);
             $entity->setColor($colores[$i]);
             $manager->persist($entity);
         }
+        
+        $tipos = array(
+            'Detección',
+            'Flor',
+            'Fruta',
+            'Otros',
+        );
+        $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
 
+        foreach ($tipos as $i => $nombre) {
+            $entity = new TipoAvistamiento();
+            $entity->setReino($flora);
+            $entity->setNombre($nombre);
+            $entity->setColor($colores[$i]);
+            $manager->persist($entity);
+        }
         $manager -> flush();
     }
-
+    
     /**
      * {@inheritDoc}
      */

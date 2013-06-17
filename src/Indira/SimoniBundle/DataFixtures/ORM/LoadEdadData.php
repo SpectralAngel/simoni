@@ -17,14 +17,15 @@ class LoadEdadData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $tipos = array(
-            0 => 'Indeterminado',
-            1 => 'Masculino',
-            2 => 'Femenino'
+            'Cría',
+            'Juvenil',
+            'Adulto',
+            'Indeterminado',
         );
         $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
         
         foreach ($tipos as $i => $nombre) {
-            $entity = new Edad($i);
+            $entity = new Edad();
             $entity->setNombre($nombre);
             $entity->setColor($colores[$i]);
             $manager->persist($entity);

@@ -29,9 +29,21 @@ class Zona
     private $nombre;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=255)
+     */
+    private $color;
+    
+    /**
      * @ORM\OneToMany(targetEntity="Avistamiento", mappedBy="zona")
      */
     protected $avistamientos;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
     
     /**
      * Get id
@@ -71,6 +83,7 @@ class Zona
     public function __construct()
     {
         $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -104,5 +117,28 @@ class Zona
     public function getAvistamientos()
     {
         return $this->avistamientos;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     * @return Zona
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string 
+     */
+    public function getColor()
+    {
+        return $this->color;
     }
 }

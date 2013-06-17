@@ -17,11 +17,8 @@ class LoadReinoData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $tipos = array(
-            'Monera',
-            'Protista',
-            'Fungi',
-            'Plantae',
-            'Animalia'
+            'Flora',
+            'Fauna'
         );
         $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
         
@@ -30,6 +27,8 @@ class LoadReinoData extends AbstractFixture implements OrderedFixtureInterface
             $entity->setNombre($nombre);
             $entity->setColor($colores[$i]);
             $manager->persist($entity);
+            
+            $this->addReference($nombre, $entity);
         }
         
         $manager->flush();
@@ -43,4 +42,3 @@ class LoadReinoData extends AbstractFixture implements OrderedFixtureInterface
         return 1; // the order in which fixtures will be loaded
     }
 }
-

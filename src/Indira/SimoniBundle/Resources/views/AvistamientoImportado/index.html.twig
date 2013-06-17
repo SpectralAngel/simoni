@@ -1,0 +1,71 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Listado de Avistamientos</h1>
+    </section>
+  </div>
+</div>
+<div class="row-fluid">
+  <section class="span9">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Municipio</th>
+          <th>Zona</th>
+          <th>Nombre Com&uacute;n</th>
+          <th>G&eacute;nero</th>
+          <th>Especie</th>
+          <th>Fecha</th>
+          <th>Cantidad</th>
+          <th>Latitud</th>
+          <th>Longitud</th>
+          <th>Comentario</th>
+          <th>Usuario</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entity in entities %}
+        <tr>
+          <td><a href="{{ path('avistamiento_importado_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+          <td>{{ entity.municipio }}</td>
+          <td>{{ entity.zona }}</td>
+          <td>{{ entity.nombreComun }}</td>
+          <td>{{ entity.genero }}</td>
+          <td>{{ entity.especie }}</td>
+          <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+          <td>{{ entity.cantidad }}</td>
+          <td>{{ entity.latitud }}</td>
+          <td>{{ entity.longitud }}</td>
+          <td>{{ entity.comentario }}</td>
+          <td>{{ entity.usuario }}</td>
+          <td>
+            <a class="btn btn-primary" href="{{ path('avistamiento_importado_show', { 'id': entity.id }) }}">mostrar</a>
+            <a class="btn btn-success" href="{{ path('avistamiento_importado_edit', { 'id': entity.id }) }}">edit</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar-nav">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('avistamiento_importado_new') }}"> Crear un Nuevo Avistamiento </a>
+        </li>
+        {% for reino in reinos %}
+        <li>
+          <a href="{{ path('avistamiento_importado_new_reino', { 'reino': reino.id }) }}"> Crear un Nuevo Avistamiento de {{ reino.nombre }} </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+</div>
+
+{% endblock %}

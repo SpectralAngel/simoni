@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Indira\SimoniBundle\Entity\Document;
+use Indira\SimoniBundle\Entity\AvistamientoImportado;
 use Indira\SimoniBundle\Form\DocumentType;
 
 /**
@@ -38,13 +39,54 @@ class DocumentController extends Controller
         $entity  = new Document();
         $form = $this->createForm(new DocumentType(), $entity);
         $form->bind($request);
-
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->upload();
+            $entity->setUser($this->getUser());
             $em->persist($entity);
             $em->flush();
-
-            return $this->redirect($this->generateUrl('document_show', array('id' => $entity->getId())));
+            
+            $zona = $form['zona']->getData();
+            $municipio = $form['municipio']->getData();
+            $excel = $this->get('xls.load_xls5')->load($entity->getAbsolutePath());
+            
+            $data = $excel->getActiveSheet()->toArray();
+            foreach(array_slice($data, 1) as $row)
+            {
+                $avistamiento = new AvistamientoImportado();
+                
+                $avistamiento->setZona($zona);
+                $avistamiento->setMunicipio($municipio);
+                
+                $avistamiento->setGenero($row[0]);
+                $avistamiento->setEspecie($row[1]);
+                
+                $fecha = \DateTime::createFromFormat('m-d-y H:i', $row[2].' '.$row[3]);
+                $avistamiento->setFecha($fecha);
+                
+                $tipo = $em->getRepository('IndiraSimoniBundle:TipoAvistamiento')->find($row[4]);
+                $avistamiento->setTipo($tipo);
+                
+                $sexo = $em->getRepository('IndiraSimoniBundle:Sexo')->find($row[5]);
+                $avistamiento->setSexo($sexo);
+                
+                $edad = $em->getRepository('IndiraSimoniBundle:Edad')->find($row[6]);
+                $avistamiento->setEdad($edad);
+                
+                $avistamiento->setCantidad($row[7]);
+                $avistamiento->setComentario($row[8]);
+                $avistamiento->setLatitud($row[9]);
+                $avistamiento->setLongitud($row[10]);
+                $avistamiento->setUsuario($this->getUser());
+                
+                $em->persist($avistamiento);
+                $em->flush();
+            }
+            
+            return $this->redirect($this->generateUrl('document_show', array(
+                'id' => $entity->getId()
+            )));
         }
 
         return $this->render('IndiraSimoniBundle:Document:new.html.twig', array(
@@ -83,12 +125,15 @@ class DocumentController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-
+        #$excel = $this->get('xls.load_xls5')->load($entity->getAbsolutePath());
+        #print_r($data = $excel->getActiveSheet()->toArray());
+        
         return $this->render('IndiraSimoniBundle:Document:show.html.twig', array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        ));
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
-
+    
     /**
      * Displays a form to edit an existing Document entity.
      *
@@ -132,6 +177,9 @@ class DocumentController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
+            
+            $entity->upload();
+            
             $em->persist($entity);
             $em->flush();
 
