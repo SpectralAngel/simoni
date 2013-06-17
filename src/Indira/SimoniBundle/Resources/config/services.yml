@@ -5,3 +5,8 @@ services:
 #    indira_simoni.example:
 #        class: %indira_simoni.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    acme_user.registration.form.type:
+        class: Indira\SimoniBundle\Form\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: acme_user_registration }

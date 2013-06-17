@@ -27,6 +27,52 @@ class User extends BaseUser
      */
     protected $documents;
     
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $nombre;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $apellidos;
+    
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $identidad;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fechaDeNacimiento;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $telefono;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $direccion;
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $departamento;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $pais;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $nivelEducativo;
+    
     public function __construct()
     {
         parent::__construct();
@@ -109,5 +155,212 @@ class User extends BaseUser
     public function getDocuments()
     {
         return $this->documents;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return User
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellidos
+     *
+     * @param string $apellidos
+     * @return User
+     */
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidos
+     *
+     * @return string 
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+
+    /**
+     * Set identidad
+     *
+     * @param string $identidad
+     * @return User
+     */
+    public function setIdentidad($identidad)
+    {
+        $this->identidad = $identidad;
+
+        return $this;
+    }
+
+    /**
+     * Get identidad
+     *
+     * @return string 
+     */
+    public function getIdentidad()
+    {
+        return $this->identidad;
+    }
+
+    /**
+     * Set fechaDeNacimiento
+     *
+     * @param \DateTime $fechaDeNacimiento
+     * @return User
+     */
+    public function setFechaDeNacimiento($fechaDeNacimiento)
+    {
+        $this->fechaDeNacimiento = $fechaDeNacimiento;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaDeNacimiento
+     *
+     * @return \DateTime 
+     */
+    public function getFechaDeNacimiento()
+    {
+        return $this->fechaDeNacimiento;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return User
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set direccion
+     *
+     * @param string $direccion
+     * @return User
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+
+        return $this;
+    }
+
+    /**
+     * Get direccion
+     *
+     * @return string 
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
+    /**
+     * Set departamento
+     *
+     * @param string $departamento
+     * @return User
+     */
+    public function setDepartamento($departamento)
+    {
+        $this->departamento = $departamento;
+
+        return $this;
+    }
+
+    /**
+     * Get departamento
+     *
+     * @return string 
+     */
+    public function getDepartamento()
+    {
+        return $this->departamento;
+    }
+
+    /**
+     * Set pais
+     *
+     * @param string $pais
+     * @return User
+     */
+    public function setPais($pais)
+    {
+        $this->pais = $pais;
+
+        return $this;
+    }
+
+    /**
+     * Get pais
+     *
+     * @return string 
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
+
+    /**
+     * Set nivelEducativo
+     *
+     * @param string $nivelEducativo
+     * @return User
+     */
+    public function setNivelEducativo($nivelEducativo)
+    {
+        $this->nivelEducativo = $nivelEducativo;
+
+        return $this;
+    }
+
+    /**
+     * Get nivelEducativo
+     *
+     * @return string 
+     */
+    public function getNivelEducativo()
+    {
+        return $this->nivelEducativo;
     }
 }
