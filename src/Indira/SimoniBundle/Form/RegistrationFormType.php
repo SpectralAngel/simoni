@@ -16,7 +16,11 @@ class RegistrationFormType extends BaseType
             ->add('nombre')
             ->add('apellidos')
             ->add('identidad')
-            ->add('fechaDeNacimiento')
+            ->add('fechaDeNacimiento', 'date', array(
+                    'label' => 'Fecha de Nacimiento',
+                    'widget' => 'single_text',
+                    'format' => 'dd/MM/yyyy',
+                    'attr' => array('class' => 'datepicker')))
             ->add('telefono')
             ->add('direccion')
             ->add('departamento')
