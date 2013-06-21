@@ -25,7 +25,9 @@ class RegistrationFormType extends BaseType
             ->add('direccion')
             ->add('departamento')
             ->add('pais')
-            ->add('nivelEducativo')
+            ->add('nivelEducativo', null, array(
+                'label' => 'Nivel Educativo'
+            ))
         ;
     }
 
