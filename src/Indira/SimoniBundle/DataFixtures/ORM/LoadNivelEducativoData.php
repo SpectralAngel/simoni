@@ -28,11 +28,11 @@ class LoadNivelEducativoData implements FixtureInterface, ContainerAwareInterfac
             6 =>'Postgrado'
         );
         
-        $colores = ColorGenerator::generateUniqueHexColors(count($niveles));
+        $colores = ColorGenerator::generateUniqueHexColors(count($niveles) + 1);
         
         foreach ($niveles as $i => $nombre) {
             $entity = new NivelEducativo();
-            $entity->setNombre($nombre);
+            $entity->setNivel($nombre);
             $entity->setColor($colores[$i]);
             $manager->persist($entity);
         }

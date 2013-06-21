@@ -73,9 +73,9 @@ class LoadPaisData implements FixtureInterface, ContainerAwareInterface {
         $colores = ColorGenerator::generateUniqueHexColors(count($paises));
         
         foreach ($paises as $i => $nombre) {
-            $entity = new Departamento();
+            $entity = new Pais();
             $entity->setNombre($nombre);
-            $entity->setColor($colores[$i]);
+            $entity->setBandera($colores[$i]);
             $manager->persist($entity);
         }
         
