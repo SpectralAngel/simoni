@@ -39,6 +39,11 @@ class NivelEducativo
      * @ORM\OneToMany(targetEntity="User", mappedBy="nivelEducativo")
      */
     protected $usuarios;
+    
+    public function __toString()
+    {
+        return $this->nivel;
+    }
 
     /**
      * Get id

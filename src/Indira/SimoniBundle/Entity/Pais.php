@@ -39,6 +39,11 @@ class Pais
      * @ORM\OneToMany(targetEntity="User", mappedBy="pais")
      */
     protected $usuarios;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
     /**
      * Get id
