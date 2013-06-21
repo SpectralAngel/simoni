@@ -42,11 +42,16 @@ class Reino
      * @ORM\OneToMany(targetEntity="TipoAvistamiento", mappedBy="reino")
      */
     protected $tiposAvistamiento;
+    
     /**
      * @ORM\OneToMany(targetEntity="Clase", mappedBy="reino")
      */
     protected $clases;
     
+    /**
+     * @ORM\OneToMany(targetEntity="Edad", mappedBy="reino")
+     */
+    protected $edades;
 
     /**
      * Get id
@@ -79,13 +84,6 @@ class Reino
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->especies = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -208,5 +206,72 @@ class Reino
     public function getClases()
     {
         return $this->clases;
+    }
+
+    /**
+     * Add edades
+     *
+     * @param \Indira\SimoniBundle\Entity\Edades $edades
+     * @return Reino
+     */
+    public function addEdad(\Indira\SimoniBundle\Entity\Edad $edades)
+    {
+        $this->edades[] = $edades;
+
+        return $this;
+    }
+
+    /**
+     * Remove edades
+     *
+     * @param \Indira\SimoniBundle\Entity\Edades $edades
+     */
+    public function removeEdad(\Indira\SimoniBundle\Entity\Edad $edades)
+    {
+        $this->edades->removeElement($edades);
+    }
+
+    /**
+     * Get edades
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEdades()
+    {
+        return $this->edades;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->especies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tiposAvistamiento = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->clases = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->edades = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Add edades
+     *
+     * @param \Indira\SimoniBundle\Entity\Edad $edades
+     * @return Reino
+     */
+    public function addEdade(\Indira\SimoniBundle\Entity\Edad $edades)
+    {
+        $this->edades[] = $edades;
+
+        return $this;
+    }
+
+    /**
+     * Remove edades
+     *
+     * @param \Indira\SimoniBundle\Entity\Edad $edades
+     */
+    public function removeEdade(\Indira\SimoniBundle\Entity\Edad $edades)
+    {
+        $this->edades->removeElement($edades);
     }
 }

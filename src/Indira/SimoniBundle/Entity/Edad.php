@@ -20,7 +20,7 @@ class Edad
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      *
@@ -45,6 +45,11 @@ class Edad
      */
     protected $avistamientosImportados;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="Reino", inversedBy="edades")
+     */
+    protected $reino;
+    
     public function __toString()
     {
         return $this->nombre;
@@ -59,6 +64,7 @@ class Edad
     {
         return $this->id;
     }
+    
     /**
      * Constructor
      */
@@ -191,5 +197,28 @@ class Edad
     public function getAvistamientosImportados()
     {
         return $this->avistamientosImportados;
+    }
+
+    /**
+     * Set reino
+     *
+     * @param \Indira\SimoniBundle\Entity\Reino $reino
+     * @return Edad
+     */
+    public function setReino(\Indira\SimoniBundle\Entity\Reino $reino = null)
+    {
+        $this->reino = $reino;
+
+        return $this;
+    }
+
+    /**
+     * Get reino
+     *
+     * @return \Indira\SimoniBundle\Entity\Reino 
+     */
+    public function getReino()
+    {
+        return $this->reino;
     }
 }

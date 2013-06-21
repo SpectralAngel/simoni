@@ -58,7 +58,6 @@ class Especie
     
     /**
      * @ORM\ManyToOne(targetEntity="Reino", inversedBy="especies")
-     * @ORM\JoinColumn(name="reino_id", referencedColumnName="id")
      */
     protected $reino;
     

@@ -16,6 +16,9 @@ class LoadEdadData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+        $flora = $this->getReference('Flora');
+        $fauna = $this->getReference('Fauna');
+        
         $tipos = array(
             'Cría',
             'Juvenil',
@@ -27,6 +30,24 @@ class LoadEdadData extends AbstractFixture implements OrderedFixtureInterface
         foreach ($tipos as $i => $nombre) {
             $entity = new Edad();
             $entity->setNombre($nombre);
+            $entity->setReino($fauna);
+            $entity->setColor($colores[$i]);
+            $manager->persist($entity);
+        }
+        
+        $tipos = array(
+            'Plántula',
+            'Planta Jóven',
+            'Planta Adulta',
+            'Indeterminado',
+        );
+        
+        $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
+        
+        foreach ($tipos as $i => $nombre) {
+            $entity = new Edad();
+            $entity->setNombre($nombre);
+            $entity->setReino($flora);
             $entity->setColor($colores[$i]);
             $manager->persist($entity);
         }
@@ -42,4 +63,3 @@ class LoadEdadData extends AbstractFixture implements OrderedFixtureInterface
         return 3; // the order in which fixtures will be loaded
     }
 }
-

@@ -23,12 +23,24 @@ class AvistamientoImportadoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $reinos = $em->getRepository('IndiraSimoniBundle:Reino')->findAll();
-        $entities = $em->getRepository('IndiraSimoniBundle:AvistamientoImportado')->findAll();
-
-        return $this->render('IndiraSimoniBundle:AvistamientoImportado:index.html.twig', array(
-            'entities' => $entities,
+        //$entities = $em->getRepository('IndiraSimoniBundle:AvistamientoImportado')->findAll();
+        $qb = $em->createQueryBuilder();
+        
+        $resultados = array(
+            //'entities' => $entities,
             'reinos' => $reinos
-        ));
+        );
+        $qb->select('a')
+            ->from('Indira\SimoniBundle\Entity\AvistamientoImportado', 'a')
+            ->where('a.reino = :reino');
+        foreach($reinos as $reino)
+        {
+            $query = $qb->setParameter('reino', $reino)->getQuery();
+            $resultados[$reino->getNombre()] = $query->getResult();
+        }
+        
+        return $this->render('IndiraSimoniBundle:AvistamientoImportado:index.html.twig',
+                             $resultados);
     }
 
     /**

@@ -18,10 +18,11 @@ class LoadTipoAvistamientoData extends AbstractFixture implements OrderedFixture
         $fauna = $this->getReference('Fauna');
         
         $tipos = array(
+            'Avistamiento',
+            'Foto Captura',
+            'Heces',
             'Huella',
             'Marca',
-            'Heces',
-            'Foto Captura',
             'Reporte de tercero',
             'Restos de animal',
             'Otros',

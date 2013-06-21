@@ -84,7 +84,14 @@ class AvistamientoImportadoReinoType extends AbstractType
             ->add('edad', null, array(
                 'empty_data'  => null,
                 'empty_value' => "",
-                'required' => TRUE
+                'required' => TRUE,
+                'query_builder' => function(EntityRepository $er) use ($reino)
+                {
+                    return $er->createQueryBuilder('e')
+                        ->where('e.reino = :reino')
+                        ->setParameter('reino', $reino)
+                    ;
+                }
             ))
             ->add('sexo', null, array(
                 'empty_data'  => null,

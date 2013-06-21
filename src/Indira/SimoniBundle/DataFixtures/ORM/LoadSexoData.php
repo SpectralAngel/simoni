@@ -16,9 +16,9 @@ class LoadSexoData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $tipos = array(
+            'Hembra',
+            'Macho',
             'Indeterminado',
-            'Masculino',
-            'Femenino',
         );
         $colores = ColorGenerator::generateUniqueHexColors(count($tipos));
         

@@ -61,15 +61,17 @@ class User extends BaseUser
     protected $direccion;
     
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Departamento", inversedBy="usuarios")
      */
     protected $departamento;
+    
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Pais", inversedBy="usuarios")
      */
     protected $pais;
+    
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="NivelEducativo", inversedBy="usuarios")
      */
     protected $nivelEducativo;
     
