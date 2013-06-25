@@ -12,7 +12,7 @@ function SIMONI() {
     $('input.datetimepicker').datetimepicker(
 	{
 	  dateFormat : 'dd/mm/yy',
-	  timeFormat : 'hh:mm tt',
+	  timeFormat : 'hh:mm',
 	  changeMonth: true,
 	  changeYear: true,
 	    maxDate: 0

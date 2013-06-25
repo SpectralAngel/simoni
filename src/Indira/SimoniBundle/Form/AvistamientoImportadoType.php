@@ -38,7 +38,7 @@ class AvistamientoImportadoType extends AbstractType
             ))
             ->add('fecha', null, array(
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy hh:mm a',
+                'format' => 'dd/MM/yyyy hh:mm',
                 'required' => TRUE,
                 'attr' => array('class' => 'datetimepicker')
             ))
