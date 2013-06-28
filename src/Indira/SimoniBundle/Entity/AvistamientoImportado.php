@@ -124,7 +124,7 @@ class AvistamientoImportado
      * @ORM\Column(name="latitud", type="decimal", nullable=true, precision=9, scale=2)
      */
     private $latitud;
-
+    
     /**
      * @var float
      *

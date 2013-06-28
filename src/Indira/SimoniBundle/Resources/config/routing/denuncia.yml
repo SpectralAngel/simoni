@@ -1,0 +1,30 @@
+denuncia:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:index" }
+
+denuncia_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:show" }
+
+denuncia_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:new" }
+
+denuncia_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:create" }
+    requirements: { _method: post }
+
+denuncia_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:edit" }
+
+denuncia_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:update" }
+    requirements: { _method: post|put }
+
+denuncia_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Denuncia:delete" }
+    requirements: { _method: post|delete }

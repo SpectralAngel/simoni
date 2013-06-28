@@ -25,10 +25,7 @@
         <a class="brand" href="{{ path('indira_simoni_homepage') }}">Simoni</a>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         <div class="btn-group pull-right">
-          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> {{ app.user.username }}
-            <span class="caret"></span>
-          </a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i> {{ app.user.username }} <span class="caret"></span> </a>
           <ul class="dropdown-menu">
             <li>
               <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
@@ -38,8 +35,12 @@
         {% else %}
         <div class="pull-right">
           <ul class="nav">
-            <li><a href="{{ path('fos_user_security_login') }}"> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
-            <li><a href="{{ path('fos_user_registration_register') }}">Registrarse</a></li>
+            <li>
+              <a href="{{ path('fos_user_security_login') }}"> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            </li>
+            <li>
+              <a href="{{ path('fos_user_registration_register') }}">Registrarse</a>
+            </li>
           </ul>
         </div>
         {% endif %}
@@ -50,6 +51,9 @@
             </li>
             <li>
               <a href="{{ path('avistamiento_importado') }}">Avistamientos</a>
+            </li>
+            <li>
+              <a href="{{ path('denuncia') }}"> Denuncias </a>
             </li>
           </ul>
         </div><!--/.nav-collapse -->

@@ -40,6 +40,16 @@ class Zona
      */
     protected $avistamientos;
     
+    /**
+     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="zona")
+     */
+    protected $avistamientosImportados;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Denuncia", mappedBy="zona")
+     */
+    protected $denuncias;
+    
     public function __toString()
     {
         return $this->nombre;
@@ -85,7 +95,7 @@ class Zona
         $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
         $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    
     /**
      * Add avistamientos
      *
@@ -140,5 +150,71 @@ class Zona
     public function getColor()
     {
         return $this->color;
+    }
+
+    /**
+     * Add avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     * @return Zona
+     */
+    public function addAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados[] = $avistamientosImportados;
+
+        return $this;
+    }
+
+    /**
+     * Remove avistamientosImportados
+     *
+     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
+     */
+    public function removeAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
+    {
+        $this->avistamientosImportados->removeElement($avistamientosImportados);
+    }
+
+    /**
+     * Get avistamientosImportados
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAvistamientosImportados()
+    {
+        return $this->avistamientosImportados;
+    }
+
+    /**
+     * Add denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     * @return Zona
+     */
+    public function addDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias[] = $denuncias;
+
+        return $this;
+    }
+
+    /**
+     * Remove denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     */
+    public function removeDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias->removeElement($denuncias);
+    }
+
+    /**
+     * Get denuncias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDenuncias()
+    {
+        return $this->denuncias;
     }
 }

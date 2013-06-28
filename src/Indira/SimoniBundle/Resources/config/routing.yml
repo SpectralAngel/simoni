@@ -9,3 +9,7 @@ IndiraSimoniBundle_document:
 IndiraSimoniBundle_avistamientoimportado:
     resource: "@IndiraSimoniBundle/Resources/config/routing/avistamientoimportado.yml"
     prefix:   /avistamientoimportado
+
+IndiraSimoniBundle_denuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/denuncia.yml"
+    prefix:   /denuncia

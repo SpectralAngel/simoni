@@ -41,9 +41,14 @@ class Municipio
     protected $avistamientos;
     
     /**
-     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="edad")
+     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="municipio")
      */
     protected $avistamientosImportados;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Denuncia", mappedBy="municipio")
+     */
+    protected $denuncias;
     
     public function __toString()
     {
@@ -178,5 +183,38 @@ class Municipio
     public function getAvistamientosImportados()
     {
         return $this->avistamientosImportados;
+    }
+
+    /**
+     * Add denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     * @return Municipio
+     */
+    public function addDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias[] = $denuncias;
+
+        return $this;
+    }
+
+    /**
+     * Remove denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     */
+    public function removeDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias->removeElement($denuncias);
+    }
+
+    /**
+     * Get denuncias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDenuncias()
+    {
+        return $this->denuncias;
     }
 }

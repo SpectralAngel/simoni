@@ -1,0 +1,70 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Denuncia</h1>
+    </section>
+  </div>
+</div>
+<div class="row-fluid">
+  <section class="span9">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+          <th>Municipio</th>
+          <td>{{ entity.municipio }}</td>
+        </tr>
+        <tr>
+          <th>Zona</th>
+          <td>{{ entity.zona }}</td>
+        </tr>
+        <tr>
+          <th>Localidad</th>
+          <td>{{ entity.localidad }}</td>
+        </tr>
+        <tr>
+          <th>Latitud</th>
+          <td>{{ entity.latitud }}</td>
+        </tr>
+        <tr>
+          <th>Longitud</th>
+          <td>{{ entity.longitud }}</td>
+        </tr>
+        <tr>
+          <th>Tipo</th>
+          <td>{{ entity.tipo }}</td>
+        </tr>
+        <tr>
+          <th>Area</th>
+          <td>{{ entity.area }}</td>
+        </tr>
+        <tr>
+          <th>Comentario</th>
+          <td>{{ entity.comentario }}</td>
+        </tr>
+        <tr>
+          <th>Fecha</th>
+          <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('denuncia') }}"> Regresar a Denuncias </a>
+        </li>
+        <li>
+          <a href="{{ path('denuncia_edit', { 'id': entity.id }) }}"> Editar </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}
