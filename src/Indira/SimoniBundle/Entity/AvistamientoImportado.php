@@ -138,7 +138,18 @@ class AvistamientoImportado
      * @ORM\Column(name="comentario", type="text", nullable=true)
      */
     private $comentario;
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Imagen", mappedBy="avistamientoImportado", 
+       cascade={"persist"})
+     */
+    protected $imagenes;
+    
+    public function __toString()
+    {
+        return $this->nombreCientifico;
+    }
+    
     /**
      * Get id
      *
@@ -561,5 +572,45 @@ class AvistamientoImportado
     public function getReino()
     {
         return $this->reino;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->imagenes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add imagenes
+     *
+     * @param \Indira\SimoniBundle\Entity\Imagen $imagenes
+     * @return AvistamientoImportado
+     */
+    public function addImagene(\Indira\SimoniBundle\Entity\Imagen $imagenes)
+    {
+        $this->imagenes[] = $imagenes;
+
+        return $this;
+    }
+
+    /**
+     * Remove imagenes
+     *
+     * @param \Indira\SimoniBundle\Entity\Imagen $imagenes
+     */
+    public function removeImagene(\Indira\SimoniBundle\Entity\Imagen $imagenes)
+    {
+        $this->imagenes->removeElement($imagenes);
+    }
+
+    /**
+     * Get imagenes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImagenes()
+    {
+        return $this->imagenes;
     }
 }

@@ -11,6 +11,10 @@
   <section class="span9">
     <form action="{{ path('avistamiento_importado_create') }}" method="post" {{ form_enctype(form) }}>
       {{ form_widget(form) }}
+      
+      <ul class="imagenes" data-prototype="{{ form_widget(form.imagenes.vars.prototype)|e }}">
+      </ul>
+      
       <p class="form-actions">
         <button class="btn btn-primary" type="submit">
           <i class="icon-save"></i> Guardar
@@ -28,4 +32,10 @@
     </nav>
   </aside>
 </div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+  var collectionHolder = 
+</script>
 {% endblock %}

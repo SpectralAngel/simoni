@@ -59,6 +59,12 @@ class AvistamientoImportadoType extends AbstractType
             ->add('comentario', null, array(
                 'label' => 'Comentario',
             ))
+            ->add('imagenes', 'collection', array(
+                'required' => false,
+                'type' => new ImagenType(),
+                'allow_add'    => true,
+                'by_reference' => false,
+            ))
         ;
     }
 
