@@ -22,6 +22,7 @@ class DenunciaType extends AbstractType
                 'required' => TRUE,
                 'attr' => array('class' => 'datetimepicker')
             ))
+            ->add('tipo')
             ->add('municipio')
             ->add('zona')
             ->add('tipo')
