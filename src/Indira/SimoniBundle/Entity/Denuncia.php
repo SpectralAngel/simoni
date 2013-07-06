@@ -79,8 +79,17 @@ class Denuncia
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $fecha;
-
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ImagenDenuncia", mappedBy="denuncia", cascade={"persist"})
+     */
+    protected $imagenes;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="denuncias")
+     */
+    protected $usuario;
+    
     /**
      * Get id
      *
@@ -296,5 +305,68 @@ class Denuncia
     public function getTipo()
     {
         return $this->tipo;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->imagenes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add imagenes
+     *
+     * @param \Indira\SimoniBundle\Entity\ImagenDenuncia $imagenes
+     * @return Denuncia
+     */
+    public function addImagene(\Indira\SimoniBundle\Entity\ImagenDenuncia $imagenes)
+    {
+        $this->imagenes[] = $imagenes;
+        $imagenes->setDenuncia($this);
+        return $this;
+    }
+
+    /**
+     * Remove imagenes
+     *
+     * @param \Indira\SimoniBundle\Entity\ImagenDenuncia $imagenes
+     */
+    public function removeImagene(\Indira\SimoniBundle\Entity\ImagenDenuncia $imagenes)
+    {
+        $this->imagenes->removeElement($imagenes);
+    }
+
+    /**
+     * Get imagenes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImagenes()
+    {
+        return $this->imagenes;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param \Indira\SimoniBundle\Entity\User $usuario
+     * @return Denuncia
+     */
+    public function setUsuario(\Indira\SimoniBundle\Entity\User $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \Indira\SimoniBundle\Entity\User 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
     }
 }

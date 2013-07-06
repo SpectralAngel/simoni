@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Imagen
+class ImagenDenuncia
 {
     /**
      * @ORM\Id
@@ -30,11 +30,10 @@ class Imagen
     public $file;
     
     /**
-     * @ORM\ManyToOne(targetEntity="AvistamientoImportado", inversedBy="imagenes", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Denuncia", inversedBy="imagenes", cascade={"persist"})
      */
-    protected $avistamientoImportado;
+    protected $denuncia;
     
-
     /**
      * Sets file.
      *
@@ -173,27 +172,26 @@ class Imagen
     {
         return $this->path;
     }
-
+    
     /**
-     * Set avistamientoImportado
+     * Set denuncia
      *
-     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientoImportado
-     * @return Imagen
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncia
+     * @return ImagenDenuncia
      */
-    public function setAvistamientoImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientoImportado = null)
+    public function setDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncia = null)
     {
-        $this->avistamientoImportado = $avistamientoImportado;
-
+        $this->denuncia = $denuncia;
         return $this;
     }
 
     /**
-     * Get avistamientoImportado
+     * Get denuncia
      *
-     * @return \Indira\SimoniBundle\Entity\AvistamientoImportado 
+     * @return \Indira\SimoniBundle\Entity\Denuncia 
      */
-    public function getAvistamientoImportado()
+    public function getDenuncia()
     {
-        return $this->avistamientoImportado;
+        return $this->denuncia;
     }
 }

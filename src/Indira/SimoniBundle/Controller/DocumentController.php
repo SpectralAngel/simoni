@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
 use Indira\SimoniBundle\Entity\Document;
+use Indira\SimoniBundle\Entity\Denuncia;
 use Indira\SimoniBundle\Entity\AvistamientoImportado;
 use Indira\SimoniBundle\Form\DocumentType;
 
@@ -80,6 +81,67 @@ class DocumentController extends Controller
                 $avistamiento->setEdad($edad);
                 
                 $avistamiento->setCantidad($row[12]);
+                $avistamiento->setComentario($row[13]);
+                $avistamiento->setUsuario($this->getUser());
+                
+                $em->persist($avistamiento);
+                $em->flush();
+            }
+            
+            return $this->redirect($this->generateUrl('document_show', array(
+                'id' => $entity->getId()
+            )));
+        }
+
+        return $this->render('IndiraSimoniBundle:Document:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a new Document entity.
+     * @Secure(roles="ROLE_USER")
+     */
+    public function createDenunciaAction(Request $request)
+    {
+        $entity  = new Document();
+        $form = $this->createForm(new DocumentType(), $entity);
+        $form->bind($request);
+        
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity->upload();
+            $entity->setUser($this->getUser());
+            $em->persist($entity);
+            $em->flush();
+            
+            $zona = $form['zona']->getData();
+            $municipio = $form['municipio']->getData();
+            $excel = $this->get('xls.load_xls5')->load($entity->getAbsolutePath());
+            
+            $data = $excel->getActiveSheet()->toArray();
+            foreach(array_slice($data, 1) as $row)
+            {
+                $denuncia = new Denuncia();
+                
+                $denuncia->setZona($zona);
+                $denuncia->setMunicipio($municipio);
+                
+                $denuncia->setNombreComun($row[1]);
+                
+                $denuncia->setGenero($row[2]);
+                $denuncia->setEspecie($row[3]);
+                $denuncia->setLocalidad($row[4]);
+                
+                $fecha = \DateTime::createFromFormat('m-d-y H:i', $row[5].' '.$row[6]);
+                $denuncia->setFecha($fecha);
+                $denuncia->setLatitud($row[7]);
+                $denuncia->setLongitud($row[8]);
+                
+                $tipo = $em->getRepository('IndiraSimoniBundle:TipoDenuncia')->find($row[9]);
+                $denuncia->setTipo($tipo);
+                
                 $avistamiento->setComentario($row[13]);
                 $avistamiento->setUsuario($this->getUser());
                 

@@ -17,3 +17,7 @@ IndiraSimoniBundle_denuncia:
 IndiraSimoniBundle_imagen:
     resource: "@IndiraSimoniBundle/Resources/config/routing/imagen.yml"
     prefix:   /imagen
+
+IndiraSimoniBundle_imagendenuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/imagendenuncia.yml"
+    prefix:   /imagendenuncia

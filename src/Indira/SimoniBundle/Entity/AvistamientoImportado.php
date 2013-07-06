@@ -590,7 +590,7 @@ class AvistamientoImportado
     public function addImagene(\Indira\SimoniBundle\Entity\Imagen $imagenes)
     {
         $this->imagenes[] = $imagenes;
-
+        $imagenes->setAvistamientoImportado($this);
         return $this;
     }
 

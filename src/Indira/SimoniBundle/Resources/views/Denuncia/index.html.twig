@@ -30,8 +30,8 @@
             <tr>
               <td><a href="{{ path('denuncia_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
               <td>{{ entity.localidad }}</td>
-              <td>{{ entity.latitud }}</td>
-              <td>{{ entity.longitud }}</td>
+              <td>{{ entity.latitud|number_format(0) }}</td>
+              <td>{{ entity.longitud|number_format(0) }}</td>
               <td>{{ entity.area }}</td>
               <td>{{ entity.comentario }}</td>
               <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>

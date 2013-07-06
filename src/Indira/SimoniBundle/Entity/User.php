@@ -23,6 +23,11 @@ class User extends BaseUser
     protected $avistamientos;
     
     /**
+     * @ORM\OneToMany(targetEntity="Denuncia", mappedBy="usuario")
+     */
+    protected $denuncias;
+    
+    /**
      * @ORM\OneToMany(targetEntity="Document", mappedBy="user")
      */
     protected $documents;
@@ -80,6 +85,7 @@ class User extends BaseUser
         parent::__construct();
         $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
         $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->denuncias = new \Doctrine\Common\Collections\ArrayCollection();
         // your own logic
     }
 
@@ -364,5 +370,38 @@ class User extends BaseUser
     public function getNivelEducativo()
     {
         return $this->nivelEducativo;
+    }
+
+    /**
+     * Add denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     * @return User
+     */
+    public function addDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias[] = $denuncias;
+
+        return $this;
+    }
+
+    /**
+     * Remove denuncias
+     *
+     * @param \Indira\SimoniBundle\Entity\Denuncia $denuncias
+     */
+    public function removeDenuncia(\Indira\SimoniBundle\Entity\Denuncia $denuncias)
+    {
+        $this->denuncias->removeElement($denuncias);
+    }
+
+    /**
+     * Get denuncias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDenuncias()
+    {
+        return $this->denuncias;
     }
 }

@@ -11,11 +11,12 @@ class DenunciaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('municipio')
+            ->add('zona')
             ->add('localidad')
             ->add('latitud')
             ->add('longitud')
             ->add('area')
-            ->add('comentario')
             ->add('fecha', null, array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy hh:mm',
@@ -23,9 +24,12 @@ class DenunciaType extends AbstractType
                 'attr' => array('class' => 'datetimepicker')
             ))
             ->add('tipo')
-            ->add('municipio')
-            ->add('zona')
-            ->add('tipo')
+            ->add('comentario')
+            ->add('imagenes', 'collection', array(
+                'type' => new ImagenDenunciaType(),
+                'by_reference' => false,
+                'allow_add'    => true
+            ))
         ;
     }
 

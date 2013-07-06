@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ImagenType extends AbstractType
+class ImagenDenunciaType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,12 +20,12 @@ class ImagenType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Indira\SimoniBundle\Entity\Imagen'
+            'data_class' => 'Indira\SimoniBundle\Entity\ImagenDenuncia'
         ));
     }
 
     public function getName()
     {
-        return 'indira_simonibundle_imagentype';
+        return 'indira_simonibundle_imagendenunciatype';
     }
 }
