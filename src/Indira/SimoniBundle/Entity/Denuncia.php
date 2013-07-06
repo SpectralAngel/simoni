@@ -369,7 +369,7 @@ class Denuncia
     public function addCoordenada(\Indira\SimoniBundle\Entity\Coordenada $coordenadas)
     {
         $this->coordenadas[] = $coordenadas;
-
+        $coordenadas->setDenuncia($this);
         return $this;
     }
 

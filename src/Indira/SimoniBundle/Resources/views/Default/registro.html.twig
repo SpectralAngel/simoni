@@ -1,0 +1,48 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Registro de Datos</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span12">
+    <div class="row">
+      <ul class="span6">
+        <li>
+          <a class="btn btn-success btn-block" href="{{ path('document_new') }}"> Ingresar Multiples Avistamientos </a>
+          <br />
+        </li>
+        {% for reino in reinos %}
+        <li>
+        <a class="btn btn-success btn-block" href="{{ path('avistamiento_importado_new_reino', { 'reino': reino.id }) }}"> Ingresar un Nuevo Avistamiento de {{ reino.nombre }} </a>
+          <br />
+        </li>
+        {% endfor %}
+        <li>
+          <a class="btn btn-success btn-block" href="{{ path('denuncia_new') }}"> Ingresar una Denuncia </a>
+          <br />
+        </li>
+      </ul>
+    </div>
+    
+    
+    
+  </section>
+</div>
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Explorar Datos</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span12">
+    <a class="btn btn-info" href="{{ path('avistamiento_importado') }}">Avistamientos</a>
+    <a class="btn btn-info" href="{{ path('denuncia') }}"> Denuncias </a>
+  </section>
+</div>
+{% endblock %}

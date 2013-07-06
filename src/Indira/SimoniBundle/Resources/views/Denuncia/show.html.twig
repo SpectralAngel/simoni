@@ -7,7 +7,7 @@
     </section>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <section class="span9">
     <table class="table table-bordered table-striped">
       <tbody>
@@ -59,4 +59,25 @@
     </nav>
   </aside>
 </div>
+  <div class="row">
+    <section class="span6">
+      <table class="table table-bordered table-striped">
+        <caption>Coordenadas del Pol&iacute;gono</caption>
+        <thead>
+          <tr>
+            <th>Latitud</th>
+            <th>Longitud</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for coordenada in entity.coordenadas %}
+          <tr>
+            <td>{{ coordenada.latitud }}</td>
+            <td>{{ coordenada.longitud }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </div>
 {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "IndiraSimoniBundle::layout.html.twig" %}
 {% block content %}
-<div class="row-fluid">
+<div class="row">
   <div class="span12">
     <section class="page-header">
       <h1>Listado de Avistamientos</h1>
     </section>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <section class="span12">
     <a class="btn btn-success" href="{{ path('document_new') }}"> Ingresar Multiples Avistamientos </a>
     {% for reino in reinos %}

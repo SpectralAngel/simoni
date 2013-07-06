@@ -2,6 +2,10 @@ indira_simoni_homepage:
     pattern:  /
     defaults: { _controller: IndiraSimoniBundle:Default:index }
 
+indira_simoni_registro:
+    pattern:  /registro
+    defaults: { _controller: IndiraSimoniBundle:Default:registro }
+
 IndiraSimoniBundle_document:
     resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
     prefix:   /document
