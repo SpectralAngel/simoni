@@ -36,21 +36,29 @@ class Sexo
     private $color;
     
     /**
-     * @ORM\OneToMany(targetEntity="Avistamiento", mappedBy="edad")
+     * @ORM\OneToMany(targetEntity="Avistamiento", mappedBy="sexo")
      */
     protected $avistamientos;
     
     /**
-     * @ORM\OneToMany(targetEntity="AvistamientoImportado", mappedBy="edad")
+     * @ORM\OneToMany(targetEntity="Ejemplar", mappedBy="sexo")
      */
-    protected $avistamientosImportados;
+    protected $ejemplares;
     
     
     public function __toString()
     {
         return $this->nombre;
     }
-    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ejemplares = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -83,26 +91,28 @@ class Sexo
     {
         return $this->nombre;
     }
+
     /**
-     * Constructor
+     * Set color
+     *
+     * @param string $color
+     * @return Sexo
      */
-    public function __construct()
+    public function setColor($color)
     {
-        $this->avistamientos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->avistamientosImportados = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->color = $color;
+
+        return $this;
     }
 
     /**
-     * Set id
+     * Get color
      *
-     * @param integer $id
-     * @return Sexo
+     * @return string 
      */
-    public function setId($id)
+    public function getColor()
     {
-        $this->id = $id;
-
-        return $this;
+        return $this->color;
     }
 
     /**
@@ -139,58 +149,35 @@ class Sexo
     }
 
     /**
-     * Set color
+     * Add ejemplares
      *
-     * @param string $color
+     * @param \Indira\SimoniBundle\Entity\Ejemplar $ejemplares
      * @return Sexo
      */
-    public function setColor($color)
+    public function addEjemplare(\Indira\SimoniBundle\Entity\Ejemplar $ejemplares)
     {
-        $this->color = $color;
+        $this->ejemplares[] = $ejemplares;
 
         return $this;
     }
 
     /**
-     * Get color
+     * Remove ejemplares
      *
-     * @return string 
+     * @param \Indira\SimoniBundle\Entity\Ejemplar $ejemplares
      */
-    public function getColor()
+    public function removeEjemplare(\Indira\SimoniBundle\Entity\Ejemplar $ejemplares)
     {
-        return $this->color;
+        $this->ejemplares->removeElement($ejemplares);
     }
 
     /**
-     * Add avistamientosImportados
-     *
-     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
-     * @return Sexo
-     */
-    public function addAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
-    {
-        $this->avistamientosImportados[] = $avistamientosImportados;
-
-        return $this;
-    }
-
-    /**
-     * Remove avistamientosImportados
-     *
-     * @param \Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados
-     */
-    public function removeAvistamientosImportado(\Indira\SimoniBundle\Entity\AvistamientoImportado $avistamientosImportados)
-    {
-        $this->avistamientosImportados->removeElement($avistamientosImportados);
-    }
-
-    /**
-     * Get avistamientosImportados
+     * Get ejemplares
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getAvistamientosImportados()
+    public function getEjemplares()
     {
-        return $this->avistamientosImportados;
+        return $this->ejemplares;
     }
 }

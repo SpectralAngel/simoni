@@ -1,0 +1,30 @@
+coordenada:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:index" }
+
+coordenada_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:show" }
+
+coordenada_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:new" }
+
+coordenada_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:create" }
+    requirements: { _method: post }
+
+coordenada_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:edit" }
+
+coordenada_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:update" }
+    requirements: { _method: post|put }
+
+coordenada_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Coordenada:delete" }
+    requirements: { _method: post|delete }

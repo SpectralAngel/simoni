@@ -1,0 +1,30 @@
+ejemplar:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:index" }
+
+ejemplar_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:show" }
+
+ejemplar_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:new" }
+
+ejemplar_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:create" }
+    requirements: { _method: post }
+
+ejemplar_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:edit" }
+
+ejemplar_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:update" }
+    requirements: { _method: post|put }
+
+ejemplar_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Ejemplar:delete" }
+    requirements: { _method: post|delete }

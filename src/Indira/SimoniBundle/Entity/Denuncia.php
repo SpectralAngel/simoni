@@ -44,21 +44,6 @@ class Denuncia
      * @ORM\Column(name="localidad", type="string", length=255)
      */
     private $localidad;
-    
-    /**
-     * @var float
-     *
-     * @ORM\Column(type="decimal", nullable=true, precision=9, scale=2)
-     */
-    private $latitud;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(type="decimal", nullable=true, precision=9, scale=2)
-     */
-    private $longitud;
-
     /**
      * @var float
      *
@@ -84,6 +69,11 @@ class Denuncia
      * @ORM\OneToMany(targetEntity="ImagenDenuncia", mappedBy="denuncia", cascade={"persist"})
      */
     protected $imagenes;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Coordenada", mappedBy="denuncia", cascade={"persist"})
+     */
+    protected $coordenadas;
     
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="denuncias")
@@ -368,5 +358,38 @@ class Denuncia
     public function getUsuario()
     {
         return $this->usuario;
+    }
+
+    /**
+     * Add coordenadas
+     *
+     * @param \Indira\SimoniBundle\Entity\Coordenada $coordenadas
+     * @return Denuncia
+     */
+    public function addCoordenada(\Indira\SimoniBundle\Entity\Coordenada $coordenadas)
+    {
+        $this->coordenadas[] = $coordenadas;
+
+        return $this;
+    }
+
+    /**
+     * Remove coordenadas
+     *
+     * @param \Indira\SimoniBundle\Entity\Coordenada $coordenadas
+     */
+    public function removeCoordenada(\Indira\SimoniBundle\Entity\Coordenada $coordenadas)
+    {
+        $this->coordenadas->removeElement($coordenadas);
+    }
+
+    /**
+     * Get coordenadas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCoordenadas()
+    {
+        return $this->coordenadas;
     }
 }

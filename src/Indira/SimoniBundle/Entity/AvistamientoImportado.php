@@ -87,22 +87,10 @@ class AvistamientoImportado
     protected $usuario;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Edad", inversedBy="avistamientosImportados")
-     * @ORM\JoinColumn(name="edad_id", referencedColumnName="id")
-     */
-    protected $edad;
-    
-    /**
      * @ORM\ManyToOne(targetEntity="Reino", inversedBy="avistamientosImportados")
      * @ORM\JoinColumn(name="reino_id", referencedColumnName="id")
      */
     protected $reino;
-    
-    /**
-     * @ORM\ManyToOne(targetEntity="Sexo", inversedBy="avistamientosImportados")
-     * @ORM\JoinColumn(name="sexo_id", referencedColumnName="id")
-     */
-    protected $sexo;
 
     /**
      * @var \DateTime
@@ -144,6 +132,12 @@ class AvistamientoImportado
        cascade={"persist"})
      */
     protected $imagenes;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Ejemplar", mappedBy="avistamientoImportado", 
+       cascade={"persist"})
+     */
+    protected $ejemplares;
     
     public function __toString()
     {
@@ -389,30 +383,7 @@ class AvistamientoImportado
     {
         return $this->usuario;
     }
-
-    /**
-     * Set edad
-     *
-     * @param \Indira\SimoniBundle\Entity\Edad $edad
-     * @return AvistamientoImportado
-     */
-    public function setEdad(\Indira\SimoniBundle\Entity\Edad $edad = null)
-    {
-        $this->edad = $edad;
-
-        return $this;
-    }
-
-    /**
-     * Get edad
-     *
-     * @return \Indira\SimoniBundle\Entity\Edad 
-     */
-    public function getEdad()
-    {
-        return $this->edad;
-    }
-
+    
     /**
      * Set nombreComun
      *
@@ -435,53 +406,7 @@ class AvistamientoImportado
     {
         return $this->nombreComun;
     }
-
-    /**
-     * Set genero
-     *
-     * @param string $genero
-     * @return AvistamientoImportado
-     */
-    public function setGenero($genero)
-    {
-        $this->genero = $genero;
-
-        return $this;
-    }
-
-    /**
-     * Get genero
-     *
-     * @return string 
-     */
-    public function getGenero()
-    {
-        return $this->genero;
-    }
-
-    /**
-     * Set sexo
-     *
-     * @param \Indira\SimoniBundle\Entity\Sexo $sexo
-     * @return AvistamientoImportado
-     */
-    public function setSexo(\Indira\SimoniBundle\Entity\Sexo $sexo = null)
-    {
-        $this->sexo = $sexo;
-
-        return $this;
-    }
-
-    /**
-     * Get sexo
-     *
-     * @return \Indira\SimoniBundle\Entity\Sexo 
-     */
-    public function getSexo()
-    {
-        return $this->sexo;
-    }
-
+    
     /**
      * Set localidad
      *
@@ -540,7 +465,7 @@ class AvistamientoImportado
 
         return $this;
     }
-
+    
     /**
      * Get clase
      *
@@ -579,6 +504,7 @@ class AvistamientoImportado
     public function __construct()
     {
         $this->imagenes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ejemplares = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -612,5 +538,61 @@ class AvistamientoImportado
     public function getImagenes()
     {
         return $this->imagenes;
+    }
+
+    /**
+     * Set genero
+     *
+     * @param string $genero
+     * @return AvistamientoImportado
+     */
+    public function setGenero($genero)
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+
+    /**
+     * Get genero
+     *
+     * @return string 
+     */
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /**
+     * Add ejemplares
+     *
+     * @param \Indira\SimoniBundle\Entity\Ejemplar $ejemplares
+     * @return AvistamientoImportado
+     */
+    public function addEjemplare(\Indira\SimoniBundle\Entity\Ejemplar $ejemplares)
+    {
+        $this->ejemplares[] = $ejemplares;
+        $ejemplares->setAvistamiento($this);
+        return $this;
+    }
+
+    /**
+     * Remove ejemplares
+     *
+     * @param \Indira\SimoniBundle\Entity\Ejemplar $ejemplares
+     */
+    public function removeEjemplare(\Indira\SimoniBundle\Entity\Ejemplar $ejemplares)
+    {
+        $this->ejemplares->removeElement($ejemplares);
+    }
+
+    /**
+     * Get ejemplares
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEjemplares()
+    {
+        return $this->ejemplares;
     }
 }

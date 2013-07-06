@@ -34,9 +34,11 @@ class AvistamientoImportadoReinoType extends AbstractType
                 'required' => TRUE
             ))
             ->add('latitud', null, array(
+                'label' => 'Latitud (UTM)',
                 'required' => TRUE
             ))
             ->add('longitud', null, array(
+                'label' => 'Longitud (UTM)',
                 'required' => TRUE
             ))
             ->add('nombreComun', null, array(
@@ -81,29 +83,18 @@ class AvistamientoImportadoReinoType extends AbstractType
                 'label' => 'Cantidad de Ejemplares',
                 'required' => TRUE
             ))
-            ->add('edad', null, array(
-                'empty_data'  => null,
-                'empty_value' => "",
-                'required' => TRUE,
-                'query_builder' => function(EntityRepository $er) use ($reino)
-                {
-                    return $er->createQueryBuilder('e')
-                        ->where('e.reino = :reino')
-                        ->setParameter('reino', $reino)
-                    ;
-                }
-            ))
-            ->add('sexo', null, array(
-                'empty_data'  => null,
-                'empty_value' => "",
-                'required' => TRUE
-            ))
-            ->add('comentario', null, array(
-                'label' => 'Comentario',
+            ->add('ejemplares', 'collection', array(
+                'type' => new EjemplarType($reino),
+                'allow_add'    => true,
+                'prototype_name' => 'Ejemplar__'
             ))
             ->add('imagenes', 'collection', array(
                 'type' => new ImagenType(),
-                'allow_add'    => true
+                'allow_add'    => true,
+                'prototype_name' => 'Imagen__'
+            ))
+            ->add('comentario', null, array(
+                'label' => 'Comentario',
             ))
         ;
     }

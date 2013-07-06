@@ -14,9 +14,15 @@ class DenunciaType extends AbstractType
             ->add('municipio')
             ->add('zona')
             ->add('localidad')
-            ->add('latitud')
-            ->add('longitud')
-            ->add('area')
+            ->add('area', null, array(
+                'required' => false
+            ))
+            ->add('coordenadas', 'collection', array(
+                'type' => new CoordenadaType(),
+                'by_reference' => false,
+                'allow_add'    => true,
+                'prototype_name' => 'Punto__'
+            ))
             ->add('fecha', null, array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy hh:mm',
@@ -24,12 +30,13 @@ class DenunciaType extends AbstractType
                 'attr' => array('class' => 'datetimepicker')
             ))
             ->add('tipo')
-            ->add('comentario')
             ->add('imagenes', 'collection', array(
                 'type' => new ImagenDenunciaType(),
                 'by_reference' => false,
-                'allow_add'    => true
+                'allow_add'    => true,
+                'prototype_name' => 'Imagen__'
             ))
+            ->add('comentario')
         ;
     }
 
