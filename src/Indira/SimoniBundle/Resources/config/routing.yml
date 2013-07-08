@@ -6,6 +6,10 @@ indira_simoni_registro:
     pattern:  /registro
     defaults: { _controller: IndiraSimoniBundle:Default:registro }
 
+indira_simoni_search:
+    pattern:  /search
+    defaults: { _controller: IndiraSimoniBundle:Default:search }
+
 IndiraSimoniBundle_document:
     resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
     prefix:   /document
