@@ -45,8 +45,8 @@
               <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
               <td>{{ entity.cantidad }}</td>
               <td>{{ entity.clase }}</td>
-              <td>{{ entity.latitud|number_format(0) }}</td>
-              <td>{{ entity.longitud|number_format(0) }}</td>
+              <td>{{ entity.latitud|number_format(0, '.', '') }}</td>
+              <td>{{ entity.longitud|number_format(0, '.', '') }}</td>
               <td>{{ entity.comentario }}</td>
               <td><a class="btn btn-primary" href="{{ path('avistamiento_importado_show', { 'id': entity.id }) }}">mostrar</a><a class="btn btn-success" href="{{ path('avistamiento_importado_edit', { 'id': entity.id }) }}">editar</a></td>
             </tr>
