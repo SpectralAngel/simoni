@@ -1,0 +1,42 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Sistema de Monitoreo Integral en RHBRP</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <div class="row">
+      <div class="span6">
+        <img height="120" width="120" class="center"  src="{{ asset('bundles/indirasimoni/img/fisica.jpg') }}" >
+        <section class="page-header">
+          <h3 class="text-center">Dimensión Físico-Química</h3>
+        </section>
+      </div>
+      <div class="span6">
+        <img height="120" width="120" class="center"  src="{{ asset('bundles/indirasimoni/img/fauna.jpg') }}" >
+        <section class="page-header">
+          <h3 class="text-center">Dimensión Biológica-Ecológica</h3>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <img height="120" width="140" class="center"  src="{{ asset('bundles/indirasimoni/img/social.jpg') }}" >
+        <section class="page-header">
+          <h3 class="text-center">Dimensión Socio-Cultural</h3>
+        </section>
+      </div>
+      <div class="span6">
+        <img height="120" width="90" class="center" src="{{ asset('bundles/indirasimoni/img/economia.jpg') }}" >
+        <section class="page-header">
+          <h3 class="text-center">Dimensión Económica-Servicios</h3>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -48,6 +48,12 @@ class DefaultController extends Controller
                              $resultados);
     }
     
+    public function monitoreoAction()
+    {
+        return $this->render('IndiraSimoniBundle:Default:monitoreo.html.twig',
+                             array());
+    }
+    
     public function getTokenAction()
     {
         return new Response($this->container->get('form.csrf_provider')

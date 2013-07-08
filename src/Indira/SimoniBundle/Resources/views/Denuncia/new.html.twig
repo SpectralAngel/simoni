@@ -9,7 +9,7 @@
 </div>
 <div class="row-fluid">
   <section class="span9">
-    <form action="{{ path('denuncia_create') }}" method="post" {{ form_enctype(form) }}>
+    <form class="form-horizontal" action="{{ path('denuncia_create') }}" method="post" {{ form_enctype(form) }}>
       {{ form_widget(form) }}
       <p class="form-actions">
         <button class="btn btn-primary" type="submit">

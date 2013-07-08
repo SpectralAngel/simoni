@@ -6,6 +6,10 @@ indira_simoni_registro:
     pattern:  /registro
     defaults: { _controller: IndiraSimoniBundle:Default:registro }
 
+indira_simoni_monitoreo:
+    pattern:  /monitoreo
+    defaults: { _controller: IndiraSimoniBundle:Default:monitoreo }
+
 indira_simoni_search:
     pattern:  /search
     defaults: { _controller: IndiraSimoniBundle:Default:search }
