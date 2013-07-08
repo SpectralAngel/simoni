@@ -13,13 +13,19 @@
       <div class="span6">
         <img height="120" width="120" class="center"  src="{{ asset('bundles/indirasimoni/img/fisica.jpg') }}" >
         <section class="page-header">
-          <h3 class="text-center">Dimensión Físico-Química</h3>
+          <a class="btn btn-block" id="ecologica" href="#"><h3 class="text-center">Dimensión Físico-Química</h3></a>
         </section>
       </div>
       <div class="span6">
         <img height="120" width="120" class="center"  src="{{ asset('bundles/indirasimoni/img/fauna.jpg') }}" >
         <section class="page-header">
-          <h3 class="text-center">Dimensión Biológica-Ecológica</h3>
+          <a class="btn btn-block" id="ecologica" href="#"><h3 class="text-center">Dimensión Biológica-Ecológica</h3></a>
+          <div id="biologica">
+            <ul class="nav nav-pills">
+              <li><a href="">Flora</a></li>
+              <li><a href="">Fauna</a></li>
+            </ul>
+          </div>
         </section>
       </div>
     </div>
@@ -27,16 +33,26 @@
       <div class="span6">
         <img height="120" width="140" class="center"  src="{{ asset('bundles/indirasimoni/img/social.jpg') }}" >
         <section class="page-header">
-          <h3 class="text-center">Dimensión Socio-Cultural</h3>
+          <a class="btn btn-block" id="ecologica" href="#"><h3 class="text-center">Dimensión Socio-Cultural</h3></a>
         </section>
       </div>
       <div class="span6">
         <img height="120" width="90" class="center" src="{{ asset('bundles/indirasimoni/img/economia.jpg') }}" >
         <section class="page-header">
-          <h3 class="text-center">Dimensión Económica-Servicios</h3>
+          <a class="btn btn-block" id="ecologica" href="#"><h3 class="text-center">Dimensión Económica-Servicios</h3></a>
         </section>
       </div>
     </div>
   </div>
 </div>
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#biologica').hide();
+      $('#ecologica').click(function() {
+        $('#biologica').toggle();
+      });
+  }); 
+</script>
 {% endblock %}
