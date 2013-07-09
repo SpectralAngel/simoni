@@ -31,8 +31,11 @@ class DefaultController extends Controller
         //$entities = $em->getRepository('IndiraSimoniBundle:AvistamientoImportado')->findAll();
         $qb = $em->createQueryBuilder();
         
+        $form = $this->createEspecieSearchForm();
+        
         $resultados = array(
             //'entities' => $entities,
+            'form'   => $form->createView(),
             'reinos' => $reinos
         );
         $qb->select('a')
@@ -92,7 +95,7 @@ class DefaultController extends Controller
     private function createEspecieSearchForm()
     {
         return $this->createFormBuilder(null, array('csrf_protection' => false))
-        ->add('cientifico', 'textarea', array(
+        ->add('cientifico', 'text', array(
             'label' => 'Nombre Cientifico'
         ))
         ->getForm();

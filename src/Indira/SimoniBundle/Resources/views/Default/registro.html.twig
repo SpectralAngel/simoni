@@ -42,4 +42,23 @@
     <a class="btn btn-info" href="{{ path('denuncia') }}"> Denuncias </a>
   </section>
 </div>
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>B&uacute;squeda</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span9">
+    <form action="{{ path('indira_simoni_search') }}" method="post" {{ form_enctype(form) }}>
+      {{ form_widget(form) }}
+      <p class="form-actions">
+        <button class="btn btn-primary" type="submit">
+          <i class="icon-save"></i> Buscar
+        </button>
+      </p>
+    </form>
+  </section>
+</div>
 {% endblock %}
