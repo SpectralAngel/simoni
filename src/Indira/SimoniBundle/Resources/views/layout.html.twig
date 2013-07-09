@@ -45,11 +45,6 @@
         </div>
         {% endif %}
         <div class="nav-collapse collapse">
-          <form class="navbar-search pull-right" method="get" action="{{ path('indira_simoni_search') }}">
-            <input type="text" name="form[cientifico]" class="span2 search-query" placeholder="Nombre Científico"><span>&nbsp;</span>
-            <input type="hidden" name="_method" value="GET" />
-            <input type="hidden" name="form[_token]" value="{{ csrf_token('rm_user_') }}">
-          </form>
           <ul class="nav">
             <li>
               <a href="{{ path('indira_simoni_registro') }}">Registro de Datos</a>
