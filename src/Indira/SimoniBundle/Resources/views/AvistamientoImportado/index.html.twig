@@ -9,13 +9,6 @@
 </div>
 <div class="row">
   <section class="span12">
-    <a class="btn btn-success" href="{{ path('document_new') }}"> Ingresar Multiples Avistamientos </a>
-    {% for reino in reinos %}
-    <a class="btn btn-success" href="{{ path('avistamiento_importado_new_reino', { 'reino': reino.id }) }}"> Crear un Nuevo Avistamiento de {{ reino.nombre }} </a>
-    
-    {% endfor %}
-    <br />
-    <br />
     <section class="row">
       <div class="span12">
         <table class="table table-striped table-bordered">
