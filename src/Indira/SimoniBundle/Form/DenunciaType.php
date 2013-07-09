@@ -36,7 +36,9 @@ class DenunciaType extends AbstractType
                 'allow_add'    => true,
                 'prototype_name' => 'Imagen__'
             ))
-            ->add('comentario')
+            ->add('comentario', null, array(
+                'required' => false
+            ))
         ;
     }
 
