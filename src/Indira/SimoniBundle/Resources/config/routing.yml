@@ -37,3 +37,27 @@ IndiraSimoniBundle_imagendenuncia:
 IndiraSimoniBundle_ejemplar:
     resource: "@IndiraSimoniBundle/Resources/config/routing/ejemplar.yml"
     prefix:   /ejemplar
+
+IndiraSimoniBundle_dimension:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/dimension.yml"
+    prefix:   /dimension
+
+IndiraSimoniBundle_subdimension:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/subdimension.yml"
+    prefix:   /subdimension
+
+IndiraSimoniBundle_beneficiario:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/beneficiario.yml"
+    prefix:   /beneficiario
+
+IndiraSimoniBundle_atributoclave:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/atributoclave.yml"
+    prefix:   /atributoclave
+
+IndiraSimoniBundle_indicador:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/indicador.yml"
+    prefix:   /indicador
+
+IndiraSimoniBundle_tipoindicador:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/tipoindicador.yml"
+    prefix:   /tipoindicador

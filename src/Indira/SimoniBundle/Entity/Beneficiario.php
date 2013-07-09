@@ -46,7 +46,16 @@ class Beneficiario
      * @ORM\OneToMany(targetEntity="AtributoClave", mappedBy="beneficiario")
      */
     protected $atributosclave;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="SubDimension", inversedBy="beneficiarios")
+     */
+    protected $subdimension;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
     /**
      * Get id
@@ -125,5 +134,68 @@ class Beneficiario
     public function getColor()
     {
         return $this->color;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->atributosclave = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add atributosclave
+     *
+     * @param \Indira\SimoniBundle\Entity\AtributoClave $atributosclave
+     * @return Beneficiario
+     */
+    public function addAtributosclave(\Indira\SimoniBundle\Entity\AtributoClave $atributosclave)
+    {
+        $this->atributosclave[] = $atributosclave;
+
+        return $this;
+    }
+
+    /**
+     * Remove atributosclave
+     *
+     * @param \Indira\SimoniBundle\Entity\AtributoClave $atributosclave
+     */
+    public function removeAtributosclave(\Indira\SimoniBundle\Entity\AtributoClave $atributosclave)
+    {
+        $this->atributosclave->removeElement($atributosclave);
+    }
+
+    /**
+     * Get atributosclave
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAtributosclave()
+    {
+        return $this->atributosclave;
+    }
+
+    /**
+     * Set subdimension
+     *
+     * @param \Indira\SimoniBundle\Entity\SubDimension $subdimension
+     * @return Beneficiario
+     */
+    public function setSubdimension(\Indira\SimoniBundle\Entity\SubDimension $subdimension = null)
+    {
+        $this->subdimension = $subdimension;
+
+        return $this;
+    }
+
+    /**
+     * Get subdimension
+     *
+     * @return \Indira\SimoniBundle\Entity\SubDimension 
+     */
+    public function getSubdimension()
+    {
+        return $this->subdimension;
     }
 }

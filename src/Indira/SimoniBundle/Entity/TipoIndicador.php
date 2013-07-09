@@ -27,6 +27,11 @@ class TipoIndicador
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Indicador", mappedBy="tipo")
+     */
+    protected $indicadores;
 
 
     /**
@@ -60,5 +65,45 @@ class TipoIndicador
     public function getNombre()
     {
         return $this->nombre;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->indicadores = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add indicadores
+     *
+     * @param \Indira\SimoniBundle\Entity\Indicador $indicadores
+     * @return TipoIndicador
+     */
+    public function addIndicadore(\Indira\SimoniBundle\Entity\Indicador $indicadores)
+    {
+        $this->indicadores[] = $indicadores;
+
+        return $this;
+    }
+
+    /**
+     * Remove indicadores
+     *
+     * @param \Indira\SimoniBundle\Entity\Indicador $indicadores
+     */
+    public function removeIndicadore(\Indira\SimoniBundle\Entity\Indicador $indicadores)
+    {
+        $this->indicadores->removeElement($indicadores);
+    }
+
+    /**
+     * Get indicadores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIndicadores()
+    {
+        return $this->indicadores;
     }
 }

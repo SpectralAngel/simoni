@@ -1,0 +1,41 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>{{ entity.nombre }}</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span9">
+    <table class="table table-bordered table-striped">
+      <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for beneficiario in entity.beneficiarios %}
+        <tr>
+            <td>{{ beneficiario.nombre }}</td>
+            <td>
+              <a class="btn btn-block" href="{{ path('beneficiario_show', { 'id': beneficiario.id }) }}">Mostrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('subdimension_edit', { 'id': entity.id }) }}">Editar</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}

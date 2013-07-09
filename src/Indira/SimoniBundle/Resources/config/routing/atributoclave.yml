@@ -1,0 +1,30 @@
+atributoclave:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:index" }
+
+atributoclave_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:show" }
+
+atributoclave_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:new" }
+
+atributoclave_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:create" }
+    requirements: { _method: post }
+
+atributoclave_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:edit" }
+
+atributoclave_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:update" }
+    requirements: { _method: post|put }
+
+atributoclave_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:AtributoClave:delete" }
+    requirements: { _method: post|delete }

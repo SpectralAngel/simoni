@@ -46,6 +46,11 @@ class Dimension
      * @ORM\OneToMany(targetEntity="SubDimension", mappedBy="dimension")
      */
     protected $subdimensiones;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
     /**
      * Get id
@@ -124,5 +129,45 @@ class Dimension
     public function getColor()
     {
         return $this->color;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->subdimensiones = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add subdimensiones
+     *
+     * @param \Indira\SimoniBundle\Entity\SubDimension $subdimensiones
+     * @return Dimension
+     */
+    public function addSubdimensione(\Indira\SimoniBundle\Entity\SubDimension $subdimensiones)
+    {
+        $this->subdimensiones[] = $subdimensiones;
+
+        return $this;
+    }
+
+    /**
+     * Remove subdimensiones
+     *
+     * @param \Indira\SimoniBundle\Entity\SubDimension $subdimensiones
+     */
+    public function removeSubdimensione(\Indira\SimoniBundle\Entity\SubDimension $subdimensiones)
+    {
+        $this->subdimensiones->removeElement($subdimensiones);
+    }
+
+    /**
+     * Get subdimensiones
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSubdimensiones()
+    {
+        return $this->subdimensiones;
     }
 }

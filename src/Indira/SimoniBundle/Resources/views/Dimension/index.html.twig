@@ -1,0 +1,46 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Sistema de Monitoreo Integral en RHBRP</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+  {% for row in entities %}
+  <div class="row">
+    {% for entity in row %}
+    <div class="span6">
+      <a title="{{ entity.nombre }}" href="{{ path('dimension_show', { 'id': entity.id }) }}">
+        <img class="center" width="140" height="140" src="{{ asset('bundles/indirasimoni/img/'~ entity.imagen ~'.jpg') }}" alt="{{ entity.nombre }}" />
+      </a>
+      <section class="page-header">
+        <a class="btn btn-block dimension" data-target="{{ entity.imagen }}" href="#"><h3 class="text-center"> Dimension {{ entity.nombre }}</h3></a>
+      </section>
+      <div class="subdimension" id="{{ entity.imagen }}">
+        <ul class="nav nav-pills">
+          {% for subdimension in entity.subdimensiones%}
+          <li><a href="{{ path('subdimension_show', { 'id': subdimension.id }) }}">{{ subdimension.nombre }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('.subdimension').hide();
+      $('.dimension').click(function() {
+        var target = $(this).data('target');
+        $('#' + target).toggle();
+      });
+  });
+</script>
+{% endblock %}

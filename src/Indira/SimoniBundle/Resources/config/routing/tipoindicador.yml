@@ -1,0 +1,30 @@
+tipoindicador:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:index" }
+
+tipoindicador_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:show" }
+
+tipoindicador_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:new" }
+
+tipoindicador_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:create" }
+    requirements: { _method: post }
+
+tipoindicador_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:edit" }
+
+tipoindicador_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:update" }
+    requirements: { _method: post|put }
+
+tipoindicador_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:TipoIndicador:delete" }
+    requirements: { _method: post|delete }
