@@ -1,46 +1,32 @@
-{% extends '::base.html.twig' %}
-
-{% block body -%}
-    <h1>Beneficiario</h1>
-
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ entity.nombre }}</td>
-            </tr>
-            <tr>
-                <th>Imagen</th>
-                <td>{{ entity.imagen }}</td>
-            </tr>
-            <tr>
-                <th>Color</th>
-                <td>{{ entity.color }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('beneficiario') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('beneficiario_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('beneficiario_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>{{ entity.nombre }}</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    {% for atributo in entity.atributosclave %}
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <p class="span12">
+            {{ atributo.descripcion }}
+          </p>
+        </div>
+      {% for indicador in atributo.indicadores %}
+        <div class="row">
+          <p class="span12">
+            {{ indicador.descripcion }} {{ indicador.tipo }}
+          </p>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
