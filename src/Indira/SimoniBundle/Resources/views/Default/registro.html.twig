@@ -50,24 +50,12 @@
   </div>
 </div>
 <div class="row">
-  <section class="span9">
-    <form action="{{ path('indira_simoni_search') }}" method="post" {{ form_enctype(form) }}>
-      {{ form_widget(form) }}
-      <p class="form-actions">
-        <button class="btn btn-primary" type="submit">
-          <i class="icon-save"></i> Buscar
-        </button>
-      </p>
-    </form>
-  </section>
-</div>
-<div class="row">
-  <section class="span9">
+  <section class="span6">
     <form action="{{ path('indira_simoni_search_multi') }}" method="post" {{ form_enctype(other) }}>
       {{ form_widget(other) }}
       <p class="form-actions">
         <button class="btn btn-primary" type="submit">
-          <i class="icon-save"></i> Buscar
+          <i class="icon-search"></i> Buscar
         </button>
       </p>
     </form>
