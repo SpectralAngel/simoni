@@ -34,11 +34,11 @@ class AvistamientoImportadoReinoType extends AbstractType
                 'required' => TRUE
             ))
             ->add('latitud', null, array(
-                'label' => 'Latitud (UTM)',
+                'label' => 'Latitud X (UTM)',
                 'required' => TRUE
             ))
             ->add('longitud', null, array(
-                'label' => 'Longitud (UTM)',
+                'label' => 'Longitud Y (UTM)',
                 'required' => TRUE
             ))
             ->add('nombreComun', null, array(
