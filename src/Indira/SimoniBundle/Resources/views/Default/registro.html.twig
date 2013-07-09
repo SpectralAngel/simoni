@@ -17,7 +17,7 @@
         </li>
         {% for reino in reinos %}
         <li>
-        <a class="btn btn-success btn-block" href="{{ path('avistamiento_importado_new_reino', { 'reino': reino.id }) }}"> Ingresar un Nuevo Avistamiento de {{ reino.nombre }} </a>
+        <a class="btn btn-success btn-block" href="{{ path('avistamiento_importado_new_reino', { 'reino': reino.id }) }}"> Ingresar Avistamiento de {{ reino.nombre }} </a>
           <br />
         </li>
         {% endfor %}

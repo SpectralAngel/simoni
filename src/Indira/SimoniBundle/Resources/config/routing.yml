@@ -61,3 +61,7 @@ IndiraSimoniBundle_indicador:
 IndiraSimoniBundle_tipoindicador:
     resource: "@IndiraSimoniBundle/Resources/config/routing/tipoindicador.yml"
     prefix:   /tipoindicador
+
+IndiraSimoniBundle_tipodenuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/tipodenuncia.yml"
+    prefix:   /tipodenuncia
