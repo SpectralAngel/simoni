@@ -20,7 +20,7 @@
       {% for indicador in atributo.indicadores %}
         <div class="row">
           <p class="span12">
-            {{ indicador.descripcion }} {{ indicador.tipo }}
+            <span class="label label-info">Indicador de {{ indicador.tipo }}</span> <span>{{ indicador.descripcion }}</span>
           </p>
         </div>
       {% endfor %}
