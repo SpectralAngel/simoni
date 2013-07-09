@@ -12,11 +12,11 @@ class CoordenadaType extends AbstractType
     {
         $builder
             ->add('latitud', null, array(
-                'label' => 'Latitud X(UTM)',
+                'label' => 'X(UTM)',
                 'required' => TRUE
             ))
             ->add('longitud', null, array(
-                'label' => 'Longitud Y(UTM)',
+                'label' => 'Y(UTM)',
                 'required' => TRUE
             ))
         ;
