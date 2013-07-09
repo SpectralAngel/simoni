@@ -32,10 +32,12 @@ class DefaultController extends Controller
         $qb = $em->createQueryBuilder();
         
         $form = $this->createEspecieSearchForm();
+        $other = $this->createSearchForm();
         
         $resultados = array(
             //'entities' => $entities,
             'form'   => $form->createView(),
+            'other' => $other->createView(),
             'reinos' => $reinos
         );
         $qb->select('a')
@@ -92,6 +94,41 @@ class DefaultController extends Controller
         );
     }
     
+    /**
+     * Lists all Oficio entities.
+     *
+     * @Route("/", name="oficio")
+     * @Method("GET")
+     * @Template()
+     */
+    public function searchMultiAction(Request $request)
+    {
+        $form = $this->createSearchForm();
+        $form->bind($request);
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+        
+        
+        $query = $qb->select('a')
+            ->from('Indira\SimoniBundle\Entity\AvistamientoImportado', 'a')
+            ->where('LOWER(a.nombreCientifico) LIKE LOWER(:cientifico)')
+            ->andWhere('a.municipio = :municipio')
+            ->andWhere('a.tipo = :tipo')
+            ->andWhere('a.clase = :clase')
+            ->setParameter('cientifico', "%".$form->get('cientifico')->getData()."%")
+            ->setParameter('municipio', $form->get('municipio')->getData())
+            ->setParameter('tipo', $form->get('deteccion')->getData())
+            ->setParameter('clase', $form->get('clase')->getData())
+            ->getQuery();
+        
+        $avistamientos = $query->getResult();
+        
+        return array(
+            'avistamientos' => $avistamientos,
+            'nombreCientifico' => $form->get('cientifico')->getData(),
+        );
+    }
+    
     private function createEspecieSearchForm()
     {
         return $this->createFormBuilder(null, array('csrf_protection' => false))
@@ -104,7 +141,7 @@ class DefaultController extends Controller
     private function createSearchForm()
     {
         return $this->createFormBuilder()
-        ->add('cientifico', 'textarea', array(
+        ->add('cientifico', 'text', array(
             'label' => 'Nombre Cientifico'
         ))
         ->add('municipio', 'entity', array(

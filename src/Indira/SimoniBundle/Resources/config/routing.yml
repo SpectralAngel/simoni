@@ -14,6 +14,10 @@ indira_simoni_search:
     pattern:  /search
     defaults: { _controller: IndiraSimoniBundle:Default:search }
 
+indira_simoni_search_multi:
+    pattern:  /search_multi
+    defaults: { _controller: IndiraSimoniBundle:Default:searchMulti }
+
 IndiraSimoniBundle_document:
     resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
     prefix:   /document

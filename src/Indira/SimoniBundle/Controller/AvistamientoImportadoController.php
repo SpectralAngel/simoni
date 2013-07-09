@@ -154,7 +154,7 @@ class AvistamientoImportadoController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
+    
     /**
      * Displays a form to edit an existing AvistamientoImportado entity.
      * @Secure(roles="ROLE_USER")
@@ -178,7 +178,7 @@ class AvistamientoImportadoController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
+    
     /**
      * Edits an existing AvistamientoImportado entity.
      * @Secure(roles="ROLE_USER")
