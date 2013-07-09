@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
+use Indira\SimoniBundle\Entity\Ejemplar;
 use Indira\SimoniBundle\Entity\AvistamientoImportado;
 use Indira\SimoniBundle\Form\AvistamientoImportadoType;
 use Indira\SimoniBundle\Form\AvistamientoImportadoReinoType;
@@ -106,6 +107,8 @@ class AvistamientoImportadoController extends Controller
         $reino = $em->getRepository('IndiraSimoniBundle:Reino')->find($reino);
         
         $entity = new AvistamientoImportado();
+        $ejemplar = new Ejemplar();
+        $entity->addEjemplare($ejemplar);
         $form   = $this->createForm(new AvistamientoImportadoReinoType($reino), $entity);
 
         return $this->render('IndiraSimoniBundle:AvistamientoImportado:newReino.html.twig', array(
