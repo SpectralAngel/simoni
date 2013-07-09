@@ -146,14 +146,20 @@ class DefaultController extends Controller
         ))
         ->add('municipio', 'entity', array(
             'class' => 'Indira\SimoniBundle\Entity\Municipio',
+            'empty_data'  => null,
+            'empty_value' => "",
             )
         )
         ->add('clase', 'entity', array(
             'class' => 'Indira\SimoniBundle\Entity\Clase',
+            'empty_data'  => null,
+            'empty_value' => "",
             )
         )
         ->add('deteccion', 'entity', array(
             'class' => 'Indira\SimoniBundle\Entity\TipoAvistamiento',
+            'empty_data'  => null,
+            'empty_value' => "",
             )
         )
         ->getForm();
