@@ -17,6 +17,7 @@
         <div class="row">
           <p class="span12">
             {{ atributo.descripcion }}
+            </br></br></br>
           </p>
         </div>
       {% for indicador in atributo.indicadores %}
@@ -25,6 +26,7 @@
             <span class="label label-info">Indicador de {{ indicador.tipo }}</span> <span>{{ indicador.descripcion }}</span>
           </p>
         </div>
+        </br></br>
       {% endfor %}
       </div>
     </div>
