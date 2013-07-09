@@ -13,9 +13,9 @@
   <div class="row">
     {% for entity in row %}
     <div class="span6">
-      <a title="{{ entity.nombre }}" href="{{ path('dimension_show', { 'id': entity.id }) }}">
+      
         <img class="center" width="140" height="140" src="{{ asset('bundles/indirasimoni/img/'~ entity.imagen ~'.jpg') }}" alt="{{ entity.nombre }}" />
-      </a>
+      
       <section class="page-header">
         <a class="btn btn-block dimension" data-target="{{ entity.imagen }}" href="#"><h3 class="text-center"> Dimension {{ entity.nombre }}</h3></a>
       </section>
