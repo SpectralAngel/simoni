@@ -50,12 +50,6 @@ class AvistamientoImportadoType extends AbstractType
                 'label' => 'Cantidad de Ejemplares',
                 'required' => TRUE
             ))
-            ->add('edad', null, array(
-                'required' => TRUE
-            ))
-            ->add('sexo', null, array(
-                'required' => TRUE
-            ))
             ->add('comentario', null, array(
                 'label' => 'Comentario',
             ))

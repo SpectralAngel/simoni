@@ -78,7 +78,7 @@ class AvistamientoImportadoController extends Controller
     public function createReinoAction(Request $request, $reino)
     {
         $entity  = new AvistamientoImportado();
-        $form = $this->createForm(new AvistamientoImportadoType(), $entity);
+        $form = $this->createForm(new AvistamientoImportadoReinoType($reino), $entity);
         $form->bind($request);
         $em = $this->getDoctrine()->getManager();
         $reino = $em->getRepository('IndiraSimoniBundle:Reino')->find($reino);
