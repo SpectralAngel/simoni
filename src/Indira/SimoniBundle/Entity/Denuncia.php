@@ -47,7 +47,7 @@ class Denuncia
     /**
      * @var float
      *
-     * @ORM\Column(name="area", type="decimal")
+     * @ORM\Column(name="area", type="decimal",  nullable=true)
      */
     private $area;
 
