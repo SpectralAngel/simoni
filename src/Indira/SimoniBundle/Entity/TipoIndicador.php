@@ -32,6 +32,11 @@ class TipoIndicador
      * @ORM\OneToMany(targetEntity="Indicador", mappedBy="tipo")
      */
     protected $indicadores;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
 
     /**
