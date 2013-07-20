@@ -1,7 +1,15 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-<form action="{{ path("fos_user_security_check") }}" method="post"  class="form-signin">
+<div class="row">
+  <section class="12">
+    <div class="page-header">
+      <h1>Crear una Cuenta</h1>
+    </div>
+  </section>
+</div>
+<div class="row">
+<form action="{{ path("fos_user_security_check") }}" method="post"  class="form-signin span6">
   {% if error %}
   <div>
     {{ error|trans({}, 'FOSUserBundle') }}
@@ -20,4 +28,5 @@
 
   <input class="btn btn-large btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
 </form>
+</div>
 {% endblock fos_user_content %}
