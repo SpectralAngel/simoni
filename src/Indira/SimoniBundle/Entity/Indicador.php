@@ -24,7 +24,7 @@ class Indicador
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="descripcion", type="string", length=255, nullable=true)
      */
     private $descripcion;
 
@@ -44,6 +44,31 @@ class Indicador
      * @ORM\ManyToOne(targetEntity="TipoIndicador", inversedBy="indicadores")
      */
     protected $tipo;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rango1;
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rango2;
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rango3;
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rango4;
     
     public function __toString()
     {
@@ -150,5 +175,97 @@ class Indicador
     public function getTipo()
     {
         return $this->tipo;
+    }
+
+    /**
+     * Set rango1
+     *
+     * @param string $rango1
+     * @return Indicador
+     */
+    public function setRango1($rango1)
+    {
+        $this->rango1 = $rango1;
+
+        return $this;
+    }
+
+    /**
+     * Get rango1
+     *
+     * @return string 
+     */
+    public function getRango1()
+    {
+        return $this->rango1;
+    }
+
+    /**
+     * Set rango2
+     *
+     * @param string $rango2
+     * @return Indicador
+     */
+    public function setRango2($rango2)
+    {
+        $this->rango2 = $rango2;
+
+        return $this;
+    }
+
+    /**
+     * Get rango2
+     *
+     * @return string 
+     */
+    public function getRango2()
+    {
+        return $this->rango2;
+    }
+
+    /**
+     * Set rango3
+     *
+     * @param string $rango3
+     * @return Indicador
+     */
+    public function setRango3($rango3)
+    {
+        $this->rango3 = $rango3;
+
+        return $this;
+    }
+
+    /**
+     * Get rango3
+     *
+     * @return string 
+     */
+    public function getRango3()
+    {
+        return $this->rango3;
+    }
+
+    /**
+     * Set rango4
+     *
+     * @param string $rango4
+     * @return Indicador
+     */
+    public function setRango4($rango4)
+    {
+        $this->rango4 = $rango4;
+
+        return $this;
+    }
+
+    /**
+     * Get rango4
+     *
+     * @return string 
+     */
+    public function getRango4()
+    {
+        return $this->rango4;
     }
 }

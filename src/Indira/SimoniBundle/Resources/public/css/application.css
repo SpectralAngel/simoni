@@ -72,3 +72,14 @@ img.center {
     margin-left: auto;
     margin-right: auto;
 }
+table {
+    background-color: white;
+}
+
+table caption {
+    font-weight: bold;
+    font-size: large;
+}
+table.table th {
+    text-align: center;
+}
