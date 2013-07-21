@@ -128,7 +128,7 @@
   var ticks = [
   {% for atributo in entity.atributosclave %}
   {% for indicador in atributo.indicadores %}
-  '{{ indicador.descripcion }}',
+  '{{ atributo.descripcion }}',
   {% endfor %}
   {% endfor %}0
   ];
@@ -149,8 +149,13 @@
   // Pad the y axis just a little so bars can get close to, but
   // not touch, the grid boundaries.  1.2 is the default padding.
   yaxis: {
-  pad: 1.05,
-  tickOptions: {formatString: '%d'}
+  min: -5,
+  max: 5,
+  numberTicks: 10,
+  tickInterval: 1, 
+    tickOptions: { 
+            formatString: '%d' 
+        }
   }
   }
   });
