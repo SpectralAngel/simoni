@@ -27,7 +27,14 @@ class Beneficiario
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descripcion;
+    
     /**
      * @var string
      *
@@ -197,5 +204,28 @@ class Beneficiario
     public function getSubdimension()
     {
         return $this->subdimension;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Beneficiario
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string 
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
     }
 }

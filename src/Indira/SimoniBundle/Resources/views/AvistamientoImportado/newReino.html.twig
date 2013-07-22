@@ -7,10 +7,31 @@
     </section>
   </div>
 </div>
-<div class="row-fluid">
+<div class="row">
   <section class="span9">
     <form action="{{ path('avistamiento_importado_create_reino', { 'reino': reino.id }) }}" method="post" {{ form_enctype(form) }}>
-      {{ form_widget(form) }}
+      <div class="row">
+        <div class="span3">
+          {{ form_row(form.municipio) }}
+          {{ form_row(form.zona) }}
+          {{ form_row(form.localidad) }}
+          {{ form_row(form.latitud) }}
+          {{ form_row(form.longitud) }}
+        </div>
+        <div class="span3">
+          {{ form_row(form.nombreComun) }}
+          {{ form_row(form.nombreCientifico) }}
+          {{ form_row(form.clase) }}
+          {{ form_row(form.fecha) }}
+          {{ form_row(form.tipo) }}
+          {{ form_row(form.cantidad) }}
+          {{ form_row(form.ejemplares) }}
+        </div>
+        <div class="span3">
+          {{ form_row(form.comentario) }}
+          {{ form_row(form.imagenes) }}
+        </div>
+      </div>
       <p class="form-actions">
         <button class="btn btn-primary" type="submit">
           <i class="icon-save"></i> Guardar
@@ -30,22 +51,21 @@
 </div>
 {% endblock %}
 
-
 {% block javascript %}
 <script type="text/javascript">
-  jQuery(document).ready(function() {
-      var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_imagenes');
-      var $addImagenLink = $('<a href="#" class="add_imagen_link btn btn-info">Agregar Imagen</a>');
-      embedForm(collectionHolder, $addImagenLink);
-      
-      /*var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_ejemplares');
-      $('#indira_simonibundle_avistamientoimportadotype_cantidad').change(function() {
-        var cantidad = $('#indira_simonibundle_avistamientoimportadotype_cantidad').val();
-        collectionHolder.data('index', collectionHolder.find(':input').length + 1);
-        for(var i = 0; i < cantidad; i++) {
-          addChildForm(collectionHolder);
-        }
-      });*/
-  });
+    jQuery(document).ready(function() {
+        var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_imagenes');
+        var $addImagenLink = $('<a href="#" class="add_imagen_link btn btn-info">Agregar Imagen</a>');
+        embedForm(collectionHolder, $addImagenLink);
+
+        /*var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_ejemplares');
+         $('#indira_simonibundle_avistamientoimportadotype_cantidad').change(function() {
+         var cantidad = $('#indira_simonibundle_avistamientoimportadotype_cantidad').val();
+         collectionHolder.data('index', collectionHolder.find(':input').length + 1);
+         for(var i = 0; i < cantidad; i++) {
+         addChildForm(collectionHolder);
+         }
+         });*/
+    }); 
 </script>
 {% endblock %}
