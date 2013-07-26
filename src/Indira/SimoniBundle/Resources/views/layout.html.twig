@@ -28,6 +28,9 @@
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i> {{ app.user.username }} <span class="caret"></span> </a>
           <ul class="dropdown-menu">
             <li>
+              <a href="{{ path('sonata_admin_dashboard') }}">Consola de Administraci&oacute;n</a>
+            </li>
+            <li>
               <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
             </li>
           </ul>
