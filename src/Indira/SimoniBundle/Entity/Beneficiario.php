@@ -59,9 +59,14 @@ class Beneficiario
      */
     protected $subdimension;
     
+    /**
+     * To String
+     *
+     * @return string
+     */
     public function __toString()
     {
-        return $this->nombre;
+        return $this->nombre.'';
     }
 
     /**

@@ -5,8 +5,26 @@ services:
 #    indira_simoni.example:
 #        class: %indira_simoni.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
-    acme_user.registration.form.type:
-        class: Indira\SimoniBundle\Form\RegistrationFormType
-        arguments: [%fos_user.model.user.class%]
+    indira.simoni.admin.beneficiario:
+        class: Indira\SimoniBundle\Admin\BeneficiarioAdmin
+        arguments: [null, Indira\SimoniBundle\Entity\Beneficiario, IndiraSimoniBundle:BeneficiarioAdmin]
         tags:
-            - { name: form.type, alias: acme_user_registration }
+            - { name: sonata.admin, manager_type: orm, group: SIMONI, label: Beneficiario }
+   
+    indira.simoni.admin.atributoclave:
+        class: Indira\SimoniBundle\Admin\AtributoClaveAdmin
+        arguments: [null, Indira\SimoniBundle\Entity\AtributoClave, IndiraSimoniBundle:AtributoClaveAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: SIMONI, label: AtributoClave }
+    
+    indira.simoni.admin.subdimension:
+        class: Indira\SimoniBundle\Admin\SubDimensionAdmin
+        arguments: [null, Indira\SimoniBundle\Entity\SubDimension, IndiraSimoniBundle:SubDimensionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: SIMONI, label: SubDimension }
+    
+    indira.simoni.admin.indicador:
+        class: Indira\SimoniBundle\Admin\IndicadorAdmin
+        arguments: [null, Indira\SimoniBundle\Entity\Indicador, IndiraSimoniBundle:IndicadorAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: SIMONI, label: Indicador }
