@@ -7,6 +7,7 @@ use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 
 class RegistrationFormType extends BaseType
 {
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
@@ -33,6 +34,6 @@ class RegistrationFormType extends BaseType
 
     public function getName()
     {
-        return 'acme_user_registration';
+        return 'simoni_user_registration';
     }
 }

@@ -74,7 +74,7 @@ fos_user:
         group_class: Indira\SimoniBundle\Entity\Group
     registration:
         form:
-            type: acme_user_registration
+            type: simoni_user_registration
 
 sonata_block:
     default_contexts: [cms]

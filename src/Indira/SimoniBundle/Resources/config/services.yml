@@ -28,3 +28,9 @@ services:
         arguments: [null, Indira\SimoniBundle\Entity\Indicador, IndiraSimoniBundle:IndicadorAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: SIMONI, label: Indicador }
+    
+    uae_user.registration.form.type:
+        class: Indira\SimoniBundle\Form\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+        - { name: form.type, alias: simoni_user_registration }
