@@ -13,8 +13,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $imagenes = $em->getRepository('Application\Sonata\MediaBundle\Entity\Media')->findAll();
         return $this->render('IndiraSimoniBundle:Default:index.html.twig',
         array(
+            'imagenes' => $imagenes,
         ));
     }
     

@@ -190,40 +190,12 @@
       </section>
     </div>
     <div class="row">
-      <div class="span12">
-        <ul id="mycarousel" class="jcarousel-skin-tango">
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/1.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/1.jpg') }}" alt="" /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/2.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/2.jpg') }}" alt="" /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/3.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/3.jpg') }}" alt="" /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/4.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/4.jpg') }}" alt="" /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/5.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/5.jpg') }}" alt="" /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-          <li>
-            <div class="hover_img">
-              <a href="{{ asset('bundles/indirasimoni/img/featured_works/6.jpg') }}" rel="prettyPhoto[portfolio1]"><img src="{{ asset('bundles/indirasimoni/img/featured_works/6.jpg') }}" alt="El Cayo Cañones, Río Plátano, Brus Laguna, Gracias a Dios, Honduras." /><span class="portfolio_zoom1"></span></a>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <div class="span6 offset3">
+        <div id="slider" class="nivoSlider">
+        {% for imagen in imagenes %}
+        {% media imagen, 'big' %}
+        {% endfor %}
+        </div>
     </div>
   </div>
 
@@ -249,21 +221,11 @@
 
 {% endblock %}
 {% block javascript %}
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.mobile.customized.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/camera.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.prettyPhoto.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.jcarousel.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.tweet.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/superfish.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/myscript.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/indirasimoni/js/jquery.nivo.slider.pack.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('bundles/indirasimoni/css/nivo-slider.css') }}" type="text/css" media="screen" />
 <script type="text/javascript">
-    $(document).ready(function() {
-        //Slider
-        $('#camera_wrap_1').camera();
-
-        //Featured works & latest posts
-        $('#mycarousel, #mycarousel2, #newscarousel').jcarousel();
-    }); 
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
 </script>
 {% endblock %}
