@@ -29,9 +29,11 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
             new Indira\SimoniBundle\IndiraSimoniBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

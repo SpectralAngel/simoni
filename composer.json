@@ -33,7 +33,9 @@
 		"sonata-project/intl-bundle": "dev-master",
 		"genemu/form-bundle": "2.1.*",
 		"sonata-project/cache-bundle": "dev-master",
-		"sonata-project/user-bundle": "dev-master"
+		"sonata-project/user-bundle": "dev-master",
+        "sonata-project/media-bundle": "dev-master"
+        "egeloen/google-map-bundle": "*",
     },
     "scripts": {
         "post-install-cmd": [

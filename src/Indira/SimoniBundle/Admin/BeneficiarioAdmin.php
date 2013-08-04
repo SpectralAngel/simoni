@@ -15,6 +15,7 @@ class BeneficiarioAdmin extends Admin
         $formMapper->add('imagen');
         $formMapper->add('color');
         $formMapper->add('subdimension');
+        $formMapper->add('image', 'sonata_type_model');
     }
  
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -23,6 +24,7 @@ class BeneficiarioAdmin extends Admin
         $datagridMapper->add('imagen');
         $datagridMapper->add('color');
         $datagridMapper->add('subdimension');
+        $datagridMapper->add('image');
     }
  
     protected function configureListFields(ListMapper $listMapper)
@@ -31,5 +33,6 @@ class BeneficiarioAdmin extends Admin
         $listMapper->add('imagen');
         $listMapper->add('color');
         $listMapper->add('subdimension');
+        $listMapper->add('image');
     }
 }

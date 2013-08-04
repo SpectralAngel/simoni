@@ -60,6 +60,11 @@ class Beneficiario
     protected $subdimension;
     
     /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     */
+    protected $image;
+    
+    /**
      * To String
      *
      * @return string
@@ -232,5 +237,28 @@ class Beneficiario
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $image
+     * @return Beneficiario
+     */
+    public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
