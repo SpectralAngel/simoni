@@ -43,6 +43,11 @@ class AtributoClave
      */
     protected $base;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     */
+    protected $datos;
+    
     public function __toString()
     {
         return $this->descripcion.'';

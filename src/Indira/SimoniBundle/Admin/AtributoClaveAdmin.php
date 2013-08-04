@@ -13,6 +13,8 @@ class AtributoClaveAdmin extends Admin
     {
         $formMapper->add('descripcion');
         $formMapper->add('beneficiario');
+        $formMapper->add('base', 'sonata_type_model');
+        $formMapper->add('datos', 'sonata_type_model');
     }
  
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -25,5 +27,7 @@ class AtributoClaveAdmin extends Admin
     {
         $listMapper->addIdentifier('descripcion');
         $listMapper->add('beneficiario');
+        $listMapper->add('base');
+        $listMapper->add('datos');
     }
 }
