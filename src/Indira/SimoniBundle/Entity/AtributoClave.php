@@ -148,4 +148,50 @@ class AtributoClave
     {
         return $this->beneficiario;
     }
+
+    /**
+     * Set base
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $base
+     * @return AtributoClave
+     */
+    public function setBase(\Application\Sonata\MediaBundle\Entity\Media $base = null)
+    {
+        $this->base = $base;
+
+        return $this;
+    }
+
+    /**
+     * Get base
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getBase()
+    {
+        return $this->base;
+    }
+
+    /**
+     * Set datos
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $datos
+     * @return AtributoClave
+     */
+    public function setDatos(\Application\Sonata\MediaBundle\Entity\Media $datos = null)
+    {
+        $this->datos = $datos;
+
+        return $this;
+    }
+
+    /**
+     * Get datos
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getDatos()
+    {
+        return $this->datos;
+    }
 }
