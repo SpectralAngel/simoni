@@ -3,6 +3,7 @@
 namespace Indira\SimoniBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Indira\SimoniBundle\gPoint;
 
 /**
  * Coordenada
@@ -117,5 +118,13 @@ class Coordenada
     public function getDenuncia()
     {
         return $this->denuncia;
+    }
+    
+    public function getPoint()
+    {
+        $point = new gPoint();
+        $point->setUTM($this->latitud, $this->longitud, '16P');
+        $point->convertTMtoLL();
+        return $point;
     }
 }

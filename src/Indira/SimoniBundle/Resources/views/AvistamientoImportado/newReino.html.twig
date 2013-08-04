@@ -36,6 +36,12 @@
         <div class="span3">
           {{ form_row(form.comentario) }}
           {{ form_row(form.imagenes) }}
+          <br />
+          {{ google_map_container(map) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
         </div>
       </div>
       <p class="form-actions">
@@ -58,6 +64,8 @@
 {% endblock %}
 
 {% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
 <script type="text/javascript">
     jQuery(document).ready(function() {
         var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_imagenes');

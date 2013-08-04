@@ -3,6 +3,7 @@
 namespace Indira\SimoniBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Indira\SimoniBundle\gPoint;
 
 /**
  * Avistamiento
@@ -594,5 +595,13 @@ class AvistamientoImportado
     public function getEjemplares()
     {
         return $this->ejemplares;
+    }
+    
+    public function getPoint()
+    {
+        $point = new gPoint();
+        $point->setUTM($this->latitud, $this->longitud, '16P');
+        $point->convertTMtoLL();
+        return $point;
     }
 }

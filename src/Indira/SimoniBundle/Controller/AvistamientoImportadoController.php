@@ -82,7 +82,8 @@ class AvistamientoImportadoController extends Controller
         $form->bind($request);
         $em = $this->getDoctrine()->getManager();
         $reino = $em->getRepository('IndiraSimoniBundle:Reino')->find($reino);
-
+        $map = $this->get('ivory_google_map.map');
+        
         if ($form->isValid()) {
             $entity->setUsuario($this->getUser());
             $entity->setReino($reino);
@@ -95,7 +96,8 @@ class AvistamientoImportadoController extends Controller
         return $this->render('IndiraSimoniBundle:AvistamientoImportado:newReino.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-            'reino' => $reino
+            'reino' => $reino,
+            'map' => $map,
         ));
     }
     /*
@@ -110,10 +112,12 @@ class AvistamientoImportadoController extends Controller
         $ejemplar = new Ejemplar();
         $entity->addEjemplare($ejemplar);
         $form   = $this->createForm(new AvistamientoImportadoReinoType($reino), $entity);
+        $map = $this->get('ivory_google_map.map');
 
         return $this->render('IndiraSimoniBundle:AvistamientoImportado:newReino.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'map' => $map,
             'reino' => $reino
         ));
     }
@@ -146,12 +150,21 @@ class AvistamientoImportadoController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find AvistamientoImportado entity.');
         }
+        
+        $point = $entity->getPoint();
+        $map = $this->get('ivory_google_map.map');
+        $marker = $this->get('ivory_google_map.marker');
+        $marker->setPrefixJavascriptVariable('marker_');
+        $marker->setPosition($point->Lat(), $point->Long(), true);
+        $map->addMarker($marker);
 
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('IndiraSimoniBundle:AvistamientoImportado:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+            'map' => $map,
+            'point' => $point,
         ));
     }
     
