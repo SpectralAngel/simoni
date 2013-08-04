@@ -97,6 +97,10 @@ class DenunciaController extends Controller
         {
             $point = $coordenada->getPoint();
             $polyline->addCoordinate($point->Lat(), $point->Long(), true);
+            $marker = $this->get('ivory_google_map.marker');
+            $marker->setPrefixJavascriptVariable('marker_');
+            $marker->setPosition($point->Lat(), $point->Long(), true);
+            $map->addMarker($marker);
         }
         $map->addPolyline($polyline);
 
