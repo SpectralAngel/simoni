@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="row">
-  <section class="span9">
+  <section class="span4">
     <form class="form-horizontal" action="{{ path('denuncia_create') }}" method="post" {{ form_enctype(form) }}>
       {{ form_widget(form) }}
       <p class="form-actions">
@@ -18,6 +18,9 @@
       </p>
     </form>
   </section>
+  <div class="span5">
+    {{ google_map_container(map) }}
+  </div>
   <aside class="span3">
     <nav class="sidebar">
       <ul class="nav nav-stacked nav-tabs">
@@ -30,6 +33,8 @@
 </div>
 {% endblock %}
 {% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
 <script type="text/javascript">
   jQuery(document).ready(function() {
     

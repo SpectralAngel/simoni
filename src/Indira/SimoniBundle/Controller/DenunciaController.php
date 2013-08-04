@@ -41,6 +41,7 @@ class DenunciaController extends Controller
         $entity  = new Denuncia();
         $form = $this->createForm(new DenunciaType(), $entity);
         $form->bind($request);
+        $map = $this->get('ivory_google_map.map');
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -54,6 +55,7 @@ class DenunciaController extends Controller
         return $this->render('IndiraSimoniBundle:Denuncia:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'map' => $map,
         ));
     }
 
@@ -66,10 +68,12 @@ class DenunciaController extends Controller
     {
         $entity = new Denuncia();
         $form   = $this->createForm(new DenunciaType(), $entity);
+        $map = $this->get('ivory_google_map.map');
 
         return $this->render('IndiraSimoniBundle:Denuncia:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'map' => $map,
         ));
     }
 
@@ -83,16 +87,26 @@ class DenunciaController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('IndiraSimoniBundle:Denuncia')->find($id);
+        $map = $this->get('ivory_google_map.map');
+        $polyline = $this->get('ivory_google_map.polyline');
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Denuncia entity.');
         }
+        foreach($entity->getCoordenadas() as $coordenada)
+        {
+            $point = $coordenada->getPoint();
+            $polyline->addCoordinate($point->Lat(), $point->Long(), true);
+        }
+        $map->addPolyline($polyline);
 
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('IndiraSimoniBundle:Denuncia:show.html.twig', array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        ));
+            'delete_form' => $deleteForm->createView(),
+            'map' => $map,
+        ));
     }
 
     /**
