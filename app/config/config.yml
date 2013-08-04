@@ -137,3 +137,16 @@ sonata_media:
         local:
             directory:  %kernel.root_dir%/web/uploads/media
             create:     true
+
+ivory_google_map:
+    map:
+      center:
+            longitude: -84.67500
+            latitude: 15
+            no_wrap: true
+      # Map width
+      width: "400px"
+
+      # Map height
+      height: "400px"
+      zoom: 8

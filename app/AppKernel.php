@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
             new Indira\SimoniBundle\IndiraSimoniBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

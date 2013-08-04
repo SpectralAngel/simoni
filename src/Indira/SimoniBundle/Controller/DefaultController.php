@@ -15,9 +15,13 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $imagenes = $em->getRepository('Application\Sonata\MediaBundle\Entity\Media')->findAll();
+        
+        $map = $this->get('ivory_google_map.map');
+        
         return $this->render('IndiraSimoniBundle:Default:index.html.twig',
         array(
             'imagenes' => $imagenes,
+            'map' => $map,
         ));
     }
     
