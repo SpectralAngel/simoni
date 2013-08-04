@@ -15,6 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+app/web/uploads/
 
 # External tool builders
 .externalToolBuilders/
