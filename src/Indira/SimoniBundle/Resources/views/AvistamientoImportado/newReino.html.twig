@@ -11,6 +11,12 @@
   <section class="span9">
     <form action="{{ path('avistamiento_importado_create_reino', { 'reino': reino.id }) }}" method="post" {{ form_enctype(form) }}>
       <div class="row">
+        <div class="span12">
+          {{ form_widget(form._token) }}
+          {{ form_errors(form) }}
+        </div>
+      </div>
+      <div class="row">
         <div class="span3">
           {{ form_row(form.municipio) }}
           {{ form_row(form.zona) }}

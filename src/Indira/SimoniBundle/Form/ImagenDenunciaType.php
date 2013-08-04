@@ -11,8 +11,10 @@ class ImagenDenunciaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file', null, array(
-                'label' => 'Archivo'
+            ->add('image', 'sonata_media_type', array(
+                'label' => 'Imagen',
+                'provider' => 'sonata.media.provider.image',
+                'context'  => 'default'
             ))
         ;
     }

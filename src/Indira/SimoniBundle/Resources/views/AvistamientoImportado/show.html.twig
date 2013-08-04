@@ -87,4 +87,9 @@
     </nav>
   </aside>
 </div>
+{% for imagen in entity.imagenes %}
+<div class="row-fluid">
+  {% media imagen.image, 'big' %}
+</div>
+{% endfor %}
 {% endblock %}

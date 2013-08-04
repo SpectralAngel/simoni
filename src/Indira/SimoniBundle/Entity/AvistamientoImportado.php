@@ -572,7 +572,7 @@ class AvistamientoImportado
     public function addEjemplare(\Indira\SimoniBundle\Entity\Ejemplar $ejemplares)
     {
         $this->ejemplares[] = $ejemplares;
-        $ejemplares->setAvistamiento($this);
+        $ejemplares->setAvistamientoImportado($this);
         return $this;
     }
 
