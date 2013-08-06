@@ -141,7 +141,7 @@ sonata_media:
 ivory_google_map:
     map:
       center:
-            longitude: -84.67500
+            longitude: -84.79500
             latitude: 15
             no_wrap: true
       # Map width

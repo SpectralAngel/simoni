@@ -76,8 +76,8 @@
          $('#indira_simonibundle_avistamientoimportadotype_cantidad').change(function() {
          var cantidad = $('#indira_simonibundle_avistamientoimportadotype_cantidad').val();
          collectionHolder.data('index', collectionHolder.find(':input').length + 1);
-         for(var i = 0; i < cantidad; i++) {
-         addChildForm(collectionHolder);
+         for(var i = 0; i < cantidad / 2; i++) {
+          addChildForm(collectionHolder);
          }
          });
     }); 
