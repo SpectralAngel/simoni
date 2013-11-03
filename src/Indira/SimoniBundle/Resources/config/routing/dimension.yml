@@ -1,0 +1,30 @@
+dimension:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:index" }
+
+dimension_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:show" }
+
+dimension_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:new" }
+
+dimension_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:create" }
+    requirements: { _method: post }
+
+dimension_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:edit" }
+
+dimension_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:update" }
+    requirements: { _method: post|put }
+
+dimension_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Dimension:delete" }
+    requirements: { _method: post|delete }

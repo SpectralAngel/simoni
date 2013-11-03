@@ -1,0 +1,39 @@
+avistamiento_importado:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:index" }
+
+avistamiento_importado_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:show" }
+
+avistamiento_importado_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:new" }
+
+avistamiento_importado_new_reino:
+    pattern:  /new/{reino}
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:newReino" }
+
+avistamiento_importado_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:create" }
+    requirements: { _method: post }
+
+avistamiento_importado_create_reino:
+    pattern:  /create/{reino}
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:createReino" }
+    requirements: { _method: post }
+
+avistamiento_importado_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:edit" }
+
+avistamiento_importado_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:update" }
+    requirements: { _method: post|put }
+
+avistamiento_importado_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:AvistamientoImportado:delete" }
+    requirements: { _method: post|delete }

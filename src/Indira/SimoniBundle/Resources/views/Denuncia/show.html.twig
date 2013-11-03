@@ -1,0 +1,90 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Denuncia</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span9">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+          <th>Municipio</th>
+          <td>{{ entity.municipio }}</td>
+        </tr>
+        <tr>
+          <th>Zona</th>
+          <td>{{ entity.zona }}</td>
+        </tr>
+        <tr>
+          <th>Localidad</th>
+          <td>{{ entity.localidad }}</td>
+        </tr>
+        <tr>
+          <th>Tipo</th>
+          <td>{{ entity.tipo }}</td>
+        </tr>
+        <tr>
+          <th>Area</th>
+          <td>{{ entity.area }}</td>
+        </tr>
+        <tr>
+          <th>Comentario</th>
+          <td>{{ entity.comentario }}</td>
+        </tr>
+        <tr>
+          <th>Fecha</th>
+          <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('denuncia') }}"> Regresar a Denuncias </a>
+        </li>
+        <li>
+          <a href="{{ path('denuncia_edit', { 'id': entity.id }) }}"> Editar </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+  <div class="row">
+    <section class="span6">
+      <table class="table table-bordered table-striped">
+        <caption>Coordenadas del Pol&iacute;gono</caption>
+        <thead>
+          <tr>
+            <th>X (UTM)</th>
+            <th>Y (UTM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for coordenada in entity.coordenadas %}
+          <tr>
+            <td>{{ coordenada.latitud|number_format(0, '.', '') }}</td>
+            <td>{{ coordenada.longitud|number_format(0, '.', '') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  <div class="span6">
+    {{ google_map_container(map) }}
+  </div>
+  </div>
+{% endblock %}
+{% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
+{% endblock %}

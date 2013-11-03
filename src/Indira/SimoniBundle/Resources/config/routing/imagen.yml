@@ -1,0 +1,30 @@
+imagen:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:index" }
+
+imagen_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:show" }
+
+imagen_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:new" }
+
+imagen_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:create" }
+    requirements: { _method: post }
+
+imagen_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:edit" }
+
+imagen_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:update" }
+    requirements: { _method: post|put }
+
+imagen_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Imagen:delete" }
+    requirements: { _method: post|delete }

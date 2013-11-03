@@ -1,0 +1,5 @@
+Indira\SimoniBundle\Entity\User:
+  properties:
+    plainPassword:
+      - NotBlank: { message: "Por favor introduzca una contraseña"}
+      - Length: { min: 8, max: 255, minMessage: "Su contraseña debe tener al menos {{ limit }} caractéres.", groups [Registration,Profile], maxMessage: "La contraseña es muy larga" }

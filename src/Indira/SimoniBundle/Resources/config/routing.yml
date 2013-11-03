@@ -1,0 +1,71 @@
+indira_simoni_homepage:
+    pattern:  /
+    defaults: { _controller: IndiraSimoniBundle:Default:index }
+
+indira_simoni_registro:
+    pattern:  /registro
+    defaults: { _controller: IndiraSimoniBundle:Default:registro }
+
+indira_simoni_monitoreo:
+    pattern:  /monitoreo
+    defaults: { _controller: IndiraSimoniBundle:Default:monitoreo }
+
+indira_simoni_search:
+    pattern:  /search
+    defaults: { _controller: IndiraSimoniBundle:Default:search }
+
+indira_simoni_search_multi:
+    pattern:  /search_multi
+    defaults: { _controller: IndiraSimoniBundle:Default:searchMulti }
+
+IndiraSimoniBundle_document:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/document.yml"
+    prefix:   /document
+
+IndiraSimoniBundle_avistamientoimportado:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/avistamientoimportado.yml"
+    prefix:   /avistamientoimportado
+
+IndiraSimoniBundle_denuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/denuncia.yml"
+    prefix:   /denuncia
+
+IndiraSimoniBundle_imagen:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/imagen.yml"
+    prefix:   /imagen
+
+IndiraSimoniBundle_imagendenuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/imagendenuncia.yml"
+    prefix:   /imagendenuncia
+
+IndiraSimoniBundle_ejemplar:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/ejemplar.yml"
+    prefix:   /ejemplar
+
+IndiraSimoniBundle_dimension:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/dimension.yml"
+    prefix:   /dimension
+
+IndiraSimoniBundle_subdimension:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/subdimension.yml"
+    prefix:   /subdimension
+
+IndiraSimoniBundle_beneficiario:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/beneficiario.yml"
+    prefix:   /beneficiario
+
+IndiraSimoniBundle_atributoclave:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/atributoclave.yml"
+    prefix:   /atributoclave
+
+IndiraSimoniBundle_indicador:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/indicador.yml"
+    prefix:   /indicador
+
+IndiraSimoniBundle_tipoindicador:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/tipoindicador.yml"
+    prefix:   /tipoindicador
+
+IndiraSimoniBundle_tipodenuncia:
+    resource: "@IndiraSimoniBundle/Resources/config/routing/tipodenuncia.yml"
+    prefix:   /tipodenuncia

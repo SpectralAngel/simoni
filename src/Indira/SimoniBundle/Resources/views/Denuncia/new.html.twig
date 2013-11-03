@@ -1,0 +1,51 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Ingresar una Denuncia</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span4">
+    <form class="form-horizontal" action="{{ path('denuncia_create') }}" method="post" {{ form_enctype(form) }}>
+      {{ form_widget(form) }}
+      <p class="form-actions">
+        <button class="btn btn-primary" type="submit">
+          <i class="icon-save"></i> Guardar
+        </button>
+      </p>
+    </form>
+  </section>
+  <div class="span5">
+    {{ google_map_container(map) }}
+  </div>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('denuncia') }}"> Regresar a Denuncias </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}
+{% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    
+    var collectionHolder = $('#indira_simonibundle_denunciatype_imagenes');
+    var $addImagenLink = $('<a href="#" class="add_imagen_link btn btn-info">Agregar Imagen</a>');
+    embedForm(collectionHolder, $addImagenLink);
+    
+    var collectionHolder = $('#indira_simonibundle_denunciatype_coordenadas');
+    var $addCoordenadaLink = $('<a href="#" class="add_coordenada_link btn btn-info">Agregar Coordenada</a>');
+    embedForm(collectionHolder, $addCoordenadaLink);
+    
+  });
+</script>
+{% endblock %}

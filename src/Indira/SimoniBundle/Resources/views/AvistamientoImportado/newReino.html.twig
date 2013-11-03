@@ -1,0 +1,85 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Ingresar un Avistamiento {% if reino is defined %} de {{ reino.nombre }} {% endif%}</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span9">
+    <form action="{{ path('avistamiento_importado_create_reino', { 'reino': reino.id }) }}" method="post" {{ form_enctype(form) }}>
+      <div class="row">
+        <div class="span12">
+          {{ form_widget(form._token) }}
+          {{ form_errors(form) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          {{ form_row(form.municipio) }}
+          {{ form_row(form.zona) }}
+          {{ form_row(form.localidad) }}
+          {{ form_row(form.latitud) }}
+          {{ form_row(form.longitud) }}
+        </div>
+        <div class="span3">
+          {{ form_row(form.nombreComun) }}
+          {{ form_row(form.nombreCientifico) }}
+          {{ form_row(form.clase) }}
+          {{ form_row(form.fecha) }}
+          {{ form_row(form.tipo) }}
+          {{ form_row(form.cantidad) }}
+          {{ form_row(form.ejemplares) }}
+        </div>
+        <div class="span3">
+          {{ form_row(form.comentario) }}
+          {{ form_row(form.imagenes) }}
+          <br />
+          {{ google_map_container(map) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+        </div>
+      </div>
+      <p class="form-actions">
+        <button class="btn btn-primary" type="submit">
+          <i class="icon-save"></i> Guardar
+        </button>
+      </p>
+    </form>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('avistamiento_importado') }}"> Regresar a Avistamientos </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_imagenes');
+        var $addImagenLink = $('<a href="#" class="add_imagen_link btn btn-info">Agregar Imagen</a>');
+        embedForm(collectionHolder, $addImagenLink);
+
+        var collectionHolder = $('#indira_simonibundle_avistamientoimportadotype_ejemplares');
+         $('#indira_simonibundle_avistamientoimportadotype_cantidad').change(function() {
+         var cantidad = $('#indira_simonibundle_avistamientoimportadotype_cantidad').val();
+         collectionHolder.data('index', collectionHolder.find(':input').length + 1);
+         for(var i = 0; i < cantidad / 2; i++) {
+          addChildForm(collectionHolder);
+         }
+         });
+    }); 
+</script>
+{% endblock %}

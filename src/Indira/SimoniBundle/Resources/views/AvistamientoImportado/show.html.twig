@@ -1,0 +1,104 @@
+{% extends "IndiraSimoniBundle::layout.html.twig" %}
+{% block content %}
+<div class="row">
+  <div class="span12">
+    <section class="page-header">
+      <h1>Avistamiento</h1>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <section class="span9">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+          <th>Municipio</th>
+          <td>{{ entity.municipio }}</td>
+        </tr>
+        <tr>
+          <th>Zona</th>
+          <td>{{ entity.zona }}</td>
+        </tr>
+        <tr>
+          <th>Localidad</th>
+          <td>{{ entity.localidad }}</td>
+        </tr>
+        <tr>
+          <th>Nombre Com&uacute;n</th>
+          <td>{{ entity.nombreComun }}</td>
+        </tr>
+        <tr>
+          <th>Nombre Cient&iacute;fico</th>
+          <td>{{ entity.nombreCientifico }}</td>
+        </tr>
+        {% if entity.genero %}
+        <tr>
+          <th>G&eacute;nero</th>
+          <td>{{ entity.genero }}</td>
+        </tr>
+        {% endif %}
+        {% if entity.especie %}
+        <tr>
+          <th>Especie</th>
+          <td>{{ entity.especie }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <th>Fecha</th>
+          <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+          <th>N&uacute;mero de Individuos</th>
+          <td>{{ entity.cantidad }}</td>
+        </tr>
+        <tr>
+          <th>Clase</th>
+          <td>{{ entity.clase }}</td>
+        </tr>
+        <tr>
+          <th>X (UTM)</th>
+          <td>{{ entity.latitud|number_format(0, '.', '') }}</td>
+        </tr>
+        <tr>
+          <th>Y (UTM)</th>
+          <td>{{ entity.longitud|number_format(0, '.', '') }}</td>
+        </tr>
+        <tr>
+          <th>Comentario</th>
+          <td>{{ entity.comentario }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <aside class="span3">
+    <nav class="sidebar">
+      <ul class="nav nav-stacked nav-tabs">
+        <li>
+          <a href="{{ path('avistamiento_importado') }}"> Regresar a Avistamientos </a>
+        </li>
+        <li>
+          <a href="{{ path('avistamiento_importado_edit', { 'id': entity.id }) }}"> Editar </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+<div class="row">
+  <div class="span6">
+    {% for imagen in entity.imagenes %}
+    {% media imagen.image, 'big' %}
+    {% endfor %}
+  </div>
+  <div class="span6">
+    {{ google_map_container(map) }}
+  </div>
+</div>
+{% endblock %}
+{% block javascript %}
+{{ google_map_js(map) }}
+{{ google_map_css(map) }}
+{% endblock %}

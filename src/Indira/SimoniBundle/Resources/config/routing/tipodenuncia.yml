@@ -1,0 +1,30 @@
+tipodenuncia:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:index" }
+
+tipodenuncia_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:show" }
+
+tipodenuncia_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:new" }
+
+tipodenuncia_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:create" }
+    requirements: { _method: post }
+
+tipodenuncia_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:edit" }
+
+tipodenuncia_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:update" }
+    requirements: { _method: post|put }
+
+tipodenuncia_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:TipoDenuncia:delete" }
+    requirements: { _method: post|delete }

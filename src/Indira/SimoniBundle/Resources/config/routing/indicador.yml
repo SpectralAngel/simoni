@@ -1,0 +1,30 @@
+indicador:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:index" }
+
+indicador_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:show" }
+
+indicador_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:new" }
+
+indicador_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:create" }
+    requirements: { _method: post }
+
+indicador_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:edit" }
+
+indicador_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:update" }
+    requirements: { _method: post|put }
+
+indicador_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Indicador:delete" }
+    requirements: { _method: post|delete }

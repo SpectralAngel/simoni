@@ -1,0 +1,30 @@
+beneficiario:
+    pattern:  /
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:index" }
+
+beneficiario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:show" }
+
+beneficiario_new:
+    pattern:  /new
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:new" }
+
+beneficiario_create:
+    pattern:  /create
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:create" }
+    requirements: { _method: post }
+
+beneficiario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:edit" }
+
+beneficiario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:update" }
+    requirements: { _method: post|put }
+
+beneficiario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IndiraSimoniBundle:Beneficiario:delete" }
+    requirements: { _method: post|delete }
